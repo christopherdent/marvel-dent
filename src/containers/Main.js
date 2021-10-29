@@ -6,6 +6,7 @@ import Grid from '../components/Grid'
 import Heading from '../components/Heading'
 import Filter from '../components/Filter'
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import { propTypes } from "react-bootstrap/esm/Image";
  
 
 
@@ -13,7 +14,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 
 
 
-function Main() {
+function Main(props) {
  
   return (
   <>
@@ -21,7 +22,8 @@ function Main() {
       <Container>
         <Heading />
         <Filter />
-        <Grid />
+        <Grid 
+        airlines = {props.airlines}/>
      </Container>
   </>
   );
