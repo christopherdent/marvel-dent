@@ -1,7 +1,7 @@
 #navCon {
   display: flex;
   justify-content: flex-start;
-  margin-left: 15px;
+ 
   padding: 5px;
   
   
@@ -9,9 +9,51 @@
 
 #root > div > nav {
   border-bottom: 1px solid rgb(221, 221, 221);
+  margin-left: 50px !important;
 }
 
 
 #navCon > img {
   max-width: 100%;
 }
+
+.container {
+  padding-top: 25px;
+  max-width: 100%;
+ 
+}
+ 
+
+
+#demo-tiles{
+  position: relative;
+  color: white;
+  width: 100%;
+  height: 200px;
+  background-color: grey;
+  margin: 15px auto;
+  border: 2px solid orange;
+ }
+ #demo-tiles span{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 45%;
+  margin-left: 0px;
+  font-weight: bold;
+ text-transform: uppercase;}
+ 
+  
+
+ 
+
+#demo-tiles > div {
+  color: black;
+
+}
+
+
+
+
+
+ 
