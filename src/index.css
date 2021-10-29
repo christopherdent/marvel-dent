@@ -23,18 +23,27 @@
  
 }
  
+#inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; 
+   
+}
+
+#inputs > div:not(:first-child) {
+  margin-left: 15px;
+}
 
 
-#demo-tiles{
+#air-tiles{
   position: relative;
   color: white;
   width: 100%;
   height: 200px;
-  background-color: grey;
-  margin: 15px auto;
+     margin: 15px auto;
   border: 2px solid orange;
  }
- #demo-tiles span{
+ #air-tiles span{
   position: absolute;
   width: 100%;
   text-align: center;

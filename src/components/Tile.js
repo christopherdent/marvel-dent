@@ -12,6 +12,9 @@ function Tile() {
   return (
   
 <>
+
+<div id="air-tiles"><span>box1</span></div>
+
 </>
       
 

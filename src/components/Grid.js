@@ -2,6 +2,11 @@
 
 import React from "react";
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import Tile from "./Tile"
+
+
+
+
 
 
 //CardList
@@ -15,50 +20,50 @@ function Grid() {
   <Row>
    
     <Col  sm={6} md={4} lg={3}>
-     <div id="demo-tiles"><span>box1</span></div>
+    <Tile />
     </Col>
 
     <Col  sm={6} md={4} lg={3}>
-     <div id="demo-tiles"><span>box2</span></div>
+     <Tile />
     </Col>
 
     <Col  sm={6} md={4} lg={3}>
-     <div id="demo-tiles"><span>box3</span></div>
+     <Tile />
     </Col>
 
     <Col  sm={6} md={4} lg={3}>
-     <div id="demo-tiles"><span>box4</span></div>
+     <Tile />
     </Col>
     
     <Col  sm={6} md={4} lg={3}>
-     <div id="demo-tiles"><span>box5</span></div>
+     <Tile />
     </Col>
     
     <Col  sm={6} md={4} lg={3}>
-     <div id="demo-tiles"><span>box6</span></div>
+     <Tile />
     </Col>
     
     <Col  sm={6} md={4} lg={3}>
-     <div id="demo-tiles"><span>box7</span></div>
+     <Tile />
     </Col>
     
     <Col  sm={6} md={4} lg={3}>
-     <div id="demo-tiles"><span>box8</span></div>
+     <Tile />
     </Col>
     <Col  sm={6} md={4} lg={3}>
-     <div id="demo-tiles"><span>box9</span></div>
-    </Col>
-    
-    <Col  sm={6} md={4} lg={3}>
-     <div id="demo-tiles"><span>box10</span></div>
+     <Tile />
     </Col>
     
     <Col  sm={6} md={4} lg={3}>
-     <div id="demo-tiles"><span>box11</span></div>
+     <Tile />
     </Col>
     
     <Col  sm={6} md={4} lg={3}>
-     <div id="demo-tiles"><span>box12</span></div>
+     <Tile />
+    </Col>
+    
+    <Col  sm={6} md={4} lg={3}>
+     <Tile />
     </Col>
 
     </Row>

@@ -5171,6 +5171,11 @@
   dependencies:
     "bser" "2.1.1"
 
+"fetch-jsonp@^1.2.1":
+  "integrity" "sha512-5UwejksxssYwlwl/9OhEQU+OrVaxdChOQntpJO/GUw6NpfPS6fd08fPvbNOq0Ym6hxfLWD6cGN0Ln/V/hWcluw=="
+  "resolved" "https://registry.npmjs.org/fetch-jsonp/-/fetch-jsonp-1.2.1.tgz"
+  "version" "1.2.1"
+
 "figgy-pudding@^3.5.1":
   "integrity" "sha512-0btnI/H8f2pavGMN8w40mlSKOfTK2SVJmBfBeVIj3kNw0swwgzyRq0d5TJVOwodFmtvpPeWPN/MCcfuWF0Ezbw=="
   "resolved" "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.5.2.tgz"
