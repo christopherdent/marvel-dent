@@ -12,75 +12,150 @@ import Tile from "./Tile"
 
 
 
-// const Grid = (props) => {
-  
-  class Grid extends React.Component {
+// function Grid(props) {
+    
+   
 
-    constructor(props) {
-      super(props);
-      this.state = {
-        airlines: [],
 
-    };
-      }
+//   const [airlines, setAirlines] = useState({
+
+   
+    
+//     site:null,
+//     code:null,
+//     alliance:null,
+//     phone:null,
+//     name : null,
+//     usName:null,
+//     clazz:null,
+//     defaultName:null,
+//     logoURL:null
+      
+
+//   })
+    
+// useEffect(() => {
+// const data = localStorage.getItem("airlines")
+// if (data) {
+//   setAirlines(JSON.parse(data))
+// }
+// }, [])
+
+
+
+// useEffect(() => {
+//     localStorage.setItem('airlines', JSON.stringify(props))
+//   })
+
+
  
-      componentDidMount(props){
-        this.setState({airlines: this.props.airlines})
-      }
+// const buildTile = () => {
+   
+             
+      //   console.log("Hi Chris")
+          
 
-     buildTile = (props) => {
-        console.log("Hi Chris")
+      //   return props.airlines.map((airline, index) => {
+
+      //     <Col sm={6} md={4} lg={3}>
+      //     <Tile
+      //       id = {index}
+      //       airline = {airline}
+      //       site={airline.site}
+      //       code={airline.code}
+      //       alliance={airline.alliance}
+      //       phone={airline.phone}
+      //       name = {airline.name}
+      //       usName={airline.usName}
+      //       clazz={airline.__clazz}
+      //       defaultName={airline.defaultName}
+      //       logoURL={airline.logoURL}  
+      //   />
+
+      //  </Col>
+        // }
+        // )
+    
+    // }
+
+    //  const unlist : (props) :> {
+    //   return this.props.airlines.map((airline, index) :> 
         
+    //       <li>{airline.name}</li>
+        
+    //   ) 
+    // }
 
 
-        return this.state.airlines.map((airline, index) => {
+//   return (
+//     <>
 
-        <Col  sm={6} md={4} lg={3}>
-          <Tile
-          id = {index}
-          airline = {airline}
-          site={airline.site}
-          code={airline.code}
-          alliance={airline.alliance}
-          phone={airline.phone}
-          name = {airline.name}
-          usName={airline.usName}
-          clazz={airline.__clazz}
-          defaultName={airline.defaultName}
-          logoURL={airline.logoURL}   
-        />
+ 
+  
+//   <Row>
+//   {buildTile()}
+//   </Row>
+   
+    
+  
+ 
+//     </>
+//   );
+// }
 
-       </Col>
-        }
-        )
-    }
+// export default Grid;
 
-     unlist = (props) => {
-      return this.state.airlines.map((airline, index) => 
+
+
+
+
+
+class Grid extends React.Component {
+
+   unlist = (props) => {
+      return this.props.airlines.map((airline, index) => 
         
           <li>{airline.name}</li>
         
       ) 
     }
 
-
- render(){
-  return (
-    <>
-
- 
-  
-  <Row>
-  {this.buildTile()}
-  </Row>
+    buildTile = () => {
+               
+        console.log("Hi Chris")
    
-   <ul>
-   {this.unlist()}
-   </ul>
-  
- 
-    </>
-  );
+
+        return this.props.airlines.map((airline, index) => {
+
+          <Col sm={6} md={4} lg={3}>
+            <Tile 
+            name = "chris" 
+            />
+          </Col>
+          }
+        )
+      }
+
+
+
+
+
+  render() {
+    return(
+  <>
+    
+     { console.log(this.props)}
+      
+     {this.buildTile()}
+     
+
+
+    <ul>
+      {this.unlist()}
+    </ul>
+  </>
+    )
+  }
 }
-}
-export default Grid;
+
+export default Grid

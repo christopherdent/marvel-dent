@@ -3,7 +3,7 @@
 import React from "react";
 
 import Logo from "../Logo.svg";
-import { Navbar, Container } from 'react-bootstrap';
+import { Navbar, Container, Card } from 'react-bootstrap';
 
 function Tile() {
    
@@ -13,7 +13,9 @@ function Tile() {
   
             <>
 
-            <div id="air-tiles"><span>box1</span></div>
+            <div id="air-tiles">TEST</div>
+              
+
 
             </>
                   

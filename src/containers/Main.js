@@ -1,7 +1,7 @@
 /*eslint-disable*/
 
 import React, { useState, useEffect } from 'react'
-import Nav from '../components/Nav'
+
 import Grid from '../components/Grid'
 import Heading from '../components/Heading'
 import Filter from '../components/Filter'
@@ -14,21 +14,50 @@ import { propTypes } from "react-bootstrap/esm/Image";
 
 
 
-function Main(props) {
+class Main extends React.Component {
+  state = {
+    airlines: []
+  }
 
-   
+  fetchAirlines = () => {
+    fetchJsonp("https://kayak.com/h/mobileapis/directory/airlines/homework", {
+      jsonpCallback: "jsonp"
+    })
+    .then(res => res.json())
+    // .then(({data}) => {
+    //   console.log(data )
+    //   this.setState({ airlines: data })  
+    .then(json => {
+      json.forEach(airline => console.log(JSON.stringify(airline.name)));
+      this.setState({airlines : json})
+      // json.forEach(airline => allAirlines.push(airline));
+          
+    })
+  }
+
  
-  return (
-  <>
-    <Nav />
-      <Container>
-        <Heading />
-        <Filter />
-        <Grid 
-        airlines = {props.airlines}/>
-     </Container>
-  </>
-  );
-}
 
+    componentDidMount(){
+      this.fetchAirlines()
+    }
+
+
+  render(){   
+     
+  return (
+
+    <>    
+        <Container>
+          <Heading />
+          <Filter />
+          <Grid 
+            airlines = { this.state.airlines }
+            tests = { 'Im a little tea prop' }
+            
+            />
+        </Container>
+    </>
+    );
+  }
+}
 export default Main;
