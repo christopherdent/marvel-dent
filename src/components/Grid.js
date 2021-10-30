@@ -125,14 +125,16 @@ class Grid extends React.Component {
         console.log("Hi Chris")
    
 
-        return this.props.airlines.map((airline, index) => {
+        return this.props.airlines.map((airline, index) => 
 
-          <Col sm={6} md={4} lg={3}>
+        <Col sm={6} md={4} lg={3}>
             <Tile 
+            key = {index}
             name = "chris" 
+            logo = {airline.logoUrl}
             />
-          </Col>
-          }
+         </Col>
+          
         )
       }
 
@@ -145,14 +147,12 @@ class Grid extends React.Component {
   <>
     
      { console.log(this.props)}
-      
+  <Row>
      {this.buildTile()}
+  </Row>
+
+
      
-
-
-    <ul>
-      {this.unlist()}
-    </ul>
   </>
     )
   }
