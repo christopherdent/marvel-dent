@@ -130,8 +130,9 @@ class Grid extends React.Component {
         <Col sm={6} md={4} lg={3}>
             <Tile 
             key = {index}
-            name = "chris" 
-            logo = {airline.logoUrl}
+            logo = {airline.logoURL}
+            name = {airline.name}
+            alliance = {airline.alliance}
             />
          </Col>
           
