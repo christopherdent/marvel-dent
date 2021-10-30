@@ -1,6 +1,6 @@
 /*eslint-disable*/
 
-import React from "react";
+import React, { useState, useEffect } from 'react'
 import Nav from '../components/Nav'
 import Grid from '../components/Grid'
 import Heading from '../components/Heading'
@@ -15,6 +15,8 @@ import { propTypes } from "react-bootstrap/esm/Image";
 
 
 function Main(props) {
+
+   
  
   return (
   <>

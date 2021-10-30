@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import fetchJsonp from 'fetch-jsonp'; 
 
 //core container
@@ -8,8 +8,7 @@ let allAirlines = []
 
 class App extends React.Component {
 
-
-  
+   
 
   fetchAirlines = () => {
     fetchJsonp("https://kayak.com/h/mobileapis/directory/airlines/homework", {
@@ -33,6 +32,7 @@ class App extends React.Component {
 
 componentDidMount(){
   this.fetchAirlines()
+  
 }
 
 
