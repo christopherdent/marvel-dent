@@ -27,16 +27,16 @@ function Tile(props) {
   return (
  
             <>
+             <Card id="air-tiles">
              
-             <div id="air-tiles">
-               <center>
-               <h1>{props.name} </h1>
-               </center>
+              
+               <h5>{props.name} </h5>
+               
                <img src =  {rootUrl + props.logo} />
               
                
-             </div>
-            
+              
+             </Card>
 
 
 

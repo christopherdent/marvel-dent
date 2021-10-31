@@ -36,12 +36,16 @@
 
 
 #air-tiles{
+  display: flex; 
+
+  flex-direction: row;
+
   position: relative;
   color: rgb(102, 16, 16);
   width: 100%;
   height: 200px;
      margin: 15px auto;
-  border: 2px solid rgb(49, 48, 46);
+  border: 2px solid rgb(172, 170, 168);
   box-shadow: 10px 10px 8px #888888;
 
  }

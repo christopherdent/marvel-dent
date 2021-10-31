@@ -112,13 +112,7 @@ import Tile from "./Tile"
 
 class Grid extends React.Component {
 
-   unlist = (props) => {
-      return this.props.airlines.map((airline, index) => 
-        
-          <li>{airline.name}</li>
-        
-      ) 
-    }
+   
 
     buildTile = () => {
                
