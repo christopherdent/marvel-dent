@@ -52,54 +52,7 @@ class Main extends React.Component {
     };
     
 
-    // handleClick = () => {
-
-    //   const airlineArray = this.state.airlines 
-    //   let filteredAirlines = airlineArray.filter(airline => airline.name === "Delta")
-
-    //   this.setState({
-    //     airlines: filteredAirlines
-    //   })
-
-    //   console.log('test')
-    
-    // }
-
-    //   skyteam = () => {
-    //     const airlineArray = this.state.airlines 
-    //     let filteredAirlines = airlineArray.filter(airline => airline.alliance === "ST")
-
-    //     this.setState({
-    //       airlines: filteredAirlines, checked: true 
-    //     })
-    // }
-
-    //   oneworld = () => {
-    //     const airlineArray = this.state.airlines 
-    //     let filteredAirlines = airlineArray.filter(airline => airline.alliance === "OW")
-
-    //     this.setState({
-    //       airlines: filteredAirlines
-    //     })
-    // }
-
-    //   staralliance = () => {
-    //     const airlineArray = this.state.airlines 
-    //     let filteredAirlines = airlineArray.filter(airline => airline.alliance === "SA")
-
-    //     this.setState({
-    //       airlines: filteredAirlines
-    //     })
-    //   }
-
-  //   handleChange = event => {
-  //    debugger 
-  //     const item = event.target.name;
-  //     const isChecked = e.target.checked;
-  //     this.setState(prevState => ({
-  //         checkedItems: prevState.checkedItems.set(item, isChecked)
-  //     }));
-  // };
+  
 
     //unify all checkboxes to share logic, e holds information about event that triggered this function, we will add value to each checkbox for easy access
     handleCheckbox = e => {
@@ -125,6 +78,8 @@ class Main extends React.Component {
               logo = {airline.logoURL}
               name = {airline.name}
               alliance = {airline.alliance}
+              phone = {airline.phone}
+              site = {airline.site}
             />
          </Col>
          
@@ -138,36 +93,8 @@ class Main extends React.Component {
         <Container>
           <Heading />
         
-          {/* <form>
-          <label htmlFor="myInput">All</label>
-          <input
-            id="myInput"
-            value="All"
-            type="checkbox"
-            onClick={this.handleCheckbox}
-          />
-          <label htmlFor="myInput">Sky Team</label>
-          <input
-            id="myInput"
-            type="checkbox"
-            value="ST"
-            onClick={this.handleCheckbox}
-          />
-          <label htmlFor="myInput">One World</label>
-          <input
-            id="myInput"
-            value="OW"
-            type="checkbox"
-            onClick={this.handleCheckbox}
-          />
-          <label htmlFor="myInput">Star Alliance</label>
-          <input
-            id="myInput"
-            value="SA"
-            type="checkbox"
-            onClick={this.handleCheckbox}
-          />
-        </form> */}
+         
+       
           <Form.Group className="mb-3" controlId="formBasicCheckbox" id="inputs" className="alliance-list">
           
      

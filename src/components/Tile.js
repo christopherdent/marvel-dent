@@ -24,6 +24,12 @@ function Tile(props) {
  const rootUrl = "http://kayak.com/"
 
  
+  const alliance = () => {
+    if (props.alliance !== "none") {
+     return <li>{props.aliance}</li>
+    }
+  }
+
   return (
  
             <>
@@ -34,8 +40,16 @@ function Tile(props) {
                
                <img src =  {rootUrl + props.logo} />
           
+              <div id = "info-box">
                <p>{props.name} </p>
-              
+
+               
+               <ul id = "hover-box">
+                { props.alliance !== "none" ? <li>{props.alliance}</li> : null }
+                <li>{props.props}</li>
+                <li>{props.site}</li>
+               </ul>
+               </div>
              </Card>
 
 
