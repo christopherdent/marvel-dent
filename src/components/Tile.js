@@ -9,17 +9,7 @@ import { propTypes } from "react-bootstrap/esm/Image";
 
 function Tile(props) {
    
-//   function inAlliance() {
-
-//     if (props.alliance !== "none") {
-
-//        {props.alliance};
-
-//     } else {
-
-//     return null;
-//   } 
-// }
+  
 
  const rootUrl = "http://kayak.com/"
 
@@ -30,6 +20,8 @@ function Tile(props) {
     }
   }
 
+ 
+  
   return (
  
             <>
@@ -45,8 +37,10 @@ function Tile(props) {
 
                
                <ul id = "hover-box">
-                { props.alliance !== "none" ? <li>{props.alliance}</li> : null }
-                <li>{props.props}</li>
+                    {props.alliance === "OW" ? <li>One World</li> : null}
+                    {props.alliance === "ST" ? <li>SkyTeam</li> : null}
+                    {props.alliance === "SA" ? <li>Star Alliance</li> : null}
+                <li>{props.phone}</li>
                 <li>{props.site}</li>
                </ul>
                </div>
