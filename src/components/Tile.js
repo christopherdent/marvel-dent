@@ -30,11 +30,11 @@ function Tile(props) {
              <Card id="air-tiles">
              
               
-               <h5>{props.name} </h5>
+               
                
                <img src =  {rootUrl + props.logo} />
-              
-               
+          
+               <p>{props.name} </p>
               
              </Card>
 
