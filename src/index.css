@@ -38,23 +38,25 @@
    
 }
 
-#inputs > div:not(:first-child) {
-  margin-left: 15px;
+.col-lg-3 col-md-4 col-sm-6{
+max-width: 100%;
 }
 
 
 #air-tiles {
   display: flex; 
-  padding-left: 20px; 
+  padding: 20px; 
      
   flex-direction: row !important;
   align-items: center !important;
-  justify-content: center;
+  justify-content: center; 
   /* justify-content: space-evenly; */
 
   word-wrap: break-word;
+  overflow: hidden; 
+
   position: relative;
-  width: 100%;
+  max-width: 100% !important;
   height: 200px;
   margin: 15px auto;
   border-radius: 8px; 
@@ -65,9 +67,24 @@
 
  }
  
- #air-tiles > img{
+
+ #infoContainer{
+  display: flex; 
+  padding-left: 20px; 
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center;
+ }
+
+ #infoContainer > img{
+   position: inline;
+  align-self: center; 
+   
   width:40px;
   height: 40px;
+   margin-right: 15px; 
+   min-width: 0;
+
 }
 
 
@@ -76,7 +93,7 @@
 #info-box {
   display: flex;
   flex-direction: column !important;
-  margin-left: 10px;
+  
 }
 
 #info-box > p {
@@ -85,43 +102,44 @@
   font-weight: bold;
   font-size: 16px;
    
-  margin-top: 15px;
+  margin-top: 20px;
   word-wrap: break-word;
+  min-width: 0;
 
   
 }
 /*air tiles active */
+/*hover box is a ul*/
 
 #hover-box {
   display: none;
   align-self: flex-end;
   justify-self: center;
+  
 }
 
-#air-tiles:hover #hover-box {
+ #air-tiles:hover #hover-box { 
+ 
   display: flex;
   flex-direction: column;
   list-style-type: none; 
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
-
+  word-wrap: break-word;
   
 
+   
+  
   font-size: 14px;
   font-weight: normal; 
   color: #5a6872
 }
 
-/* border: 1px solid #363f45; */
-
-/* air tiles active */
-
-/* #air-tiles-hover > p:hover + span {
-  visibility: visible;
-  
-  font-family: Helvetica;
-  color:#192024;
-  font-weight: bold;
-  font-size: 11px;
  
-} */
+
+#hover-box > li {
+  word-wrap: break-word;
+  max-width: 95%;
+   
+}
+ 

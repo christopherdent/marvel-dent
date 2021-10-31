@@ -12,15 +12,19 @@ function Tile(props) {
   
 
  const rootUrl = "http://kayak.com/"
+//removing the http:// 
+  let mySite = props.site.replace(/^\/\/|^.*?:(\/\/)?/, '')
+  
+  mySite = mySite.replace(/\/.*$/, "");
 
- 
+
   const alliance = () => {
     if (props.alliance !== "none") {
      return <li>{props.aliance}</li>
     }
   }
 
- 
+  
   
   return (
  
@@ -28,7 +32,7 @@ function Tile(props) {
              <Card id="air-tiles">
              
               
-               
+              <div id = "infoContainer"> 
                
                <img src =  {rootUrl + props.logo} />
           
@@ -41,8 +45,10 @@ function Tile(props) {
                     {props.alliance === "ST" ? <li>SkyTeam</li> : null}
                     {props.alliance === "SA" ? <li>Star Alliance</li> : null}
                 <li>{props.phone}</li>
-                <li>{props.site}</li>
+                <li>{mySite}</li>
                </ul>
+               </div>
+
                </div>
              </Card>
 
