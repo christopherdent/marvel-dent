@@ -1,5 +1,6 @@
 #root {
   font-family: Helvetica;
+  background-color: #F9FAFB;
 }
 
 
@@ -9,17 +10,15 @@
   border-bottom: 1px solid rgb(221, 221, 221);
   max-width: 100% !important;
   margin: 0 !important;
-  padding: 15px 0px 15px 8%;
+  padding: 15px 0px 15px 7%;
+  background-color: #FFFFFF;
 
 }
 
 
-
-
 .container {
-  padding-top: 25px;
-  
- 
+  padding-top: 25px; 
+  padding-bottom: 150px;
 }
 
 #root > div > div > h1 {
@@ -29,13 +28,22 @@
   color: #000000;
 }
  
+
+#root > div > div > p {
+
+  font-size: 14;
+  font-weight: bold; 
+  color: #192024;
+}
 #inputs {
  
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  font-size: 16px; 
-   
+  font-size: 14px;
+  font-weight: normal;
+  color: #192024; 
+  padding-bottom: 30px; 
 }
  
  
@@ -43,13 +51,10 @@
 #inputs > div:nth-child(2),
 #inputs > div:nth-child(3){
   margin-left: 20px; 
+
 }
 
-/* .col-lg-3 col-md-4 col-sm-6{
-  max-width: 100%;
-   
-} */
-
+ 
 #root > div > div > div.row > div{
   padding: 0;  
  }
@@ -70,7 +75,7 @@
    
  }
  
- 
+
 
  
  #air-tiles > img {
@@ -100,12 +105,12 @@
   flex-direction: column;  
 }
 
-#info-box > p {
+#info-box > span {
    
   color:#192024;
   font-weight: bold;
-  font-size: 16px;
-  margin-top: 20px;
+  font-size: 14px;
+   
   word-wrap: break-word;
  
   
@@ -116,6 +121,11 @@
 
 #hover-box {
   display: none;   
+}
+
+#hover-box > li> a {
+  text-decoration: none;
+  color: #5a6872;
 }
 
 #air-tiles:hover {
@@ -142,7 +152,7 @@
   margin: 0; /* Remove margins */
   font-size: 14px;
   font-weight: normal; 
-  color: #5a6872;   
+    
 }
 
  
@@ -153,6 +163,7 @@
 #hover-box > li {   
   max-width: 100%;
   white-space: nowrap;
+  color: #192024;
       
 }
  

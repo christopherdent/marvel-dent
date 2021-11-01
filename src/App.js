@@ -1,38 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import fetchJsonp from 'fetch-jsonp'; 
-import Nav from './components/Nav'
+import React from 'react' 
 
-//core container
+//core containers
+import Nav from './components/Nav'
 import Main from "./containers/Main";
  
  
 
 class App extends React.Component {
- 
-   
-
-
-
-
-
-
-
-  render() {
+ render() {
   return (
     <div>
-    <Nav />
+      <Nav />
       <Main/>
     </div>
     );
   }
-
-  
 }
-
-
-
-
-
-
 
 export default App;

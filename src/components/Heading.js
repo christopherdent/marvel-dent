@@ -14,13 +14,10 @@ function Heading() {
 <>
 
 <h1>Airlines</h1>
-
+<br/>
+<p>Filter by Alliances</p>
 </>
-      
-
-
-
- 
+       
   );
 }
 
