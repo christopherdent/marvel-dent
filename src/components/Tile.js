@@ -37,7 +37,7 @@ function Tile(props) {
              <Card id="air-tiles">
              
               
-              <div id = "infoContainer"> 
+             
                
                <img src =  {rootUrl + props.logo} />
           
@@ -52,7 +52,7 @@ function Tile(props) {
                 <li>{props.phone}</li>
                 <li>{mySite}</li>
                </ul>
-               </div>
+            
 
                </div>
              </Card>
