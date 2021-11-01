@@ -13,7 +13,7 @@ function Nav() {
   
     
       <Navbar>
-        <div id = 'navCon'>
+        
         
               <img 
               src={Logo}
@@ -22,7 +22,7 @@ function Nav() {
               
               />{' '}
         
-        </div>
+        
       </Navbar>
 
       

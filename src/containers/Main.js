@@ -5,6 +5,7 @@ import Tile from '../components/Tile'
 import Grid from '../components/Grid'
 import Heading from '../components/Heading'
 import Filter from '../components/Filter'
+import Nav from '../components/Nav'
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import { propTypes } from "react-bootstrap/esm/Image";
  
@@ -91,6 +92,8 @@ class Main extends React.Component {
  
     <>    
         <Container>
+
+      
           <Heading />
         
          

@@ -12,10 +12,15 @@ function Tile(props) {
   
 
  const rootUrl = "http://kayak.com/"
+
+ 
+ 
 //removing the http:// 
   let mySite = props.site.replace(/^\/\/|^.*?:(\/\/)?/, '')
   
   mySite = mySite.replace(/\/.*$/, "");
+
+  mySite = mySite.replace("www.", "")
 
 
   const alliance = () => {
