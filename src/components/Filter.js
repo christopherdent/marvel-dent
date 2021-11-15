@@ -12,30 +12,45 @@ function Filter(props) {
 
    
 <Form.Group className="mb-3" controlId="formBasicCheckbox" id="inputs" className="alliance-list">
+
+        <Form.Check             
+          type="radio" 
+          label="All" 
+          id= "All" 
           
+          value="All"
+          defaultChecked = {false}
+          name= 'allys'
+         />
           
         <Form.Check             
-          type="checkbox" 
-          label="One World" 
-          id= "One World" 
+          type="radio" 
+          label="other option" 
+          id= "other option" 
           onClick={props.handleCheckbox}
-          value="OW"
+          value="other 1"
+          defaultChecked = {false}
+          name= 'allys'
          />
           
           <Form.Check 
-          type="checkbox" 
-          label="Sky Team" 
-          id = "Sky Team"  
+          type="radio" 
+          label="other 2" 
+          id = "other 2"  
           onClick={props.handleCheckbox}
-          value="ST"
+          value="other2"
+          defaultChecked = {false}
+          name= 'allys'
           />
          
           <Form.Check 
-          type="checkbox" 
-          label="Star Alliance" 
-          id = "Star Alliance"  
+          type="radio" 
+          label="other3" 
+          id = "other 3"  
           onClick={props.handleCheckbox}
-          value="SA"
+          value="other3"
+          defaultChecked = {false}
+          name= 'allys'
           />
       </Form.Group>
   </>

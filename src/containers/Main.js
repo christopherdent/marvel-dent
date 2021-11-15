@@ -14,19 +14,17 @@ class Main extends React.Component {
     
     this.state = {
       airlines: [],
-      filter: 'none',
-      checked: false
+      filter: 'none'
+      
   }
 } 
   
 
   fetchAirlines = () => {
-    fetchJsonp("https://kayak.com/h/mobileapis/directory/airlines/homework", {
-      jsonpCallback: "jsonp"
-    })
+    fetch(" ")
     .then(res => res.json())     
     .then(json => {
-      this.setState({airlines : json, checked: false})
+      this.setState({ airlines : json })
     })
   }
 
@@ -35,8 +33,8 @@ class Main extends React.Component {
     }
 
     handleCheckbox = e => {
-      if (this.state.filter === e.target.value) this.setState({ filter: "none" });
-      else this.setState({ filter: e.target.value, checked: true });
+      if (this.state.filter === e.target.value || e.target.value === "All") this.setState({ filter: "none" });
+      else this.setState({ filter: e.target.value });
     };
     
   
