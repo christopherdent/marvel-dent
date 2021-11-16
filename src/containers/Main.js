@@ -13,34 +13,16 @@ class Main extends React.Component {
     super();    
     this.state = {
       gifs: [],
+      filter : 'squirell'
     
       
   }
 } 
 
-
-//  configObj = {
-//   method: "GET",
-//   credentials: 'include', 
-//   headers: {
-//         "Authorization": "45ed2055d91697f77b5a93df58e9d3307f9dd3c8",
-//            'Content-Type': 'application/json'
-
-//   }
-// };
-
-// url = "https://comicvine.gamespot.com/api/volumes/?api_key=45ed2055d91697f77b5a93df58e9d3307f9dd3c8&format=json&sort=name:asc&filter=name:Walking%20Dead"
-
-  // fetchComics = () => {
-  //   fetch('https://comicvine.gamespot.com/api/volumes/?api_key=45ed2055d91697f77b5a93df58e9d3307f9dd3c8&format=json&sort=name:asc&filter=name:Walking%20Dead', this.configObj)
-  //   .then(res => res.json())     
-  //   .then(json => {
-  //     console.log(json)
-  //     // this.setState({ comics : json })
-  //   })
-  // }
-
-  fetchComics = (query = "squirell") => {
+  
+ 
+  // fetchComics = (query = "squirell") => {
+    fetchComics = (query = this.state.filter) => {
     fetch(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=DEvt17BerwqE1YuHcxBOt4EWH1cutiP4&rating=g`)
         
 
@@ -75,7 +57,7 @@ class Main extends React.Component {
     }
 
     handleCheckbox = e => {
-      if (this.state.filter === e.target.value || e.target.value === "All") this.setState({ filter: "none" });
+      if (e.target.value === "All") this.setState({ filter: "none" });
       else this.setState({ filter: e.target.value });
     };
     
@@ -87,7 +69,7 @@ class Main extends React.Component {
     // const filterList = this.state.gifs.map(gif, index => {
 
     //   return 
-    //   <li>{gif.name}</li>
+    
     //       // if (airline.alliance === this.state.filter || this.state.filter === "none")             
     //       return (            
     //         <Col sm={6} md={4} lg={3}>
@@ -109,11 +91,17 @@ class Main extends React.Component {
       const filterList = this.state.gifs.map(item => {
         console.log(item.url)
 
+        // if (gif.alliance === this.state.filter || this.state.filter === "none")  
                   return (            
-            <Col sm={6} md={4} lg={3}>
+            <Col sm={6} md={4} lg={4}>
             <Tile 
-               
+              key = {item.id}
+              id = {item.id}
               image = {item.images.original.url}
+              bitly = {item.bitly_url}
+              rating = {item.rating}
+              title = {item.title}
+              source = {item.source_post_url}
               // name = {airline.name}
               // alliance = {airline.alliance}
               // phone = {airline.phone}

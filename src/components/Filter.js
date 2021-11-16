@@ -20,37 +20,37 @@ function Filter(props) {
           
           value="All"
           defaultChecked = {false}
-          name= 'allys'
+          name= 'animals'
          />
           
         <Form.Check             
           type="radio" 
-          label="other option" 
-          id= "other option" 
+          label="Squirells" 
+          id= "squirell" 
           onClick={props.handleCheckbox}
-          value="other 1"
+          value="Squirells"
           defaultChecked = {false}
-          name= 'allys'
+          name= 'animals'
          />
           
           <Form.Check 
           type="radio" 
-          label="other 2" 
-          id = "other 2"  
+          label="Cats" 
+          id = "cats"  
           onClick={props.handleCheckbox}
-          value="other2"
+          value="cats"
           defaultChecked = {false}
-          name= 'allys'
+          name= 'animals'
           />
          
           <Form.Check 
           type="radio" 
-          label="other3" 
-          id = "other 3"  
+          label="Dragons" 
+          id = "Dragons"  
           onClick={props.handleCheckbox}
-          value="other3"
+          value="dragons"
           defaultChecked = {false}
-          name= 'allys'
+          name= 'animals'
           />
       </Form.Group>
   </>

@@ -18,9 +18,9 @@ function Tile(props) {
               <div id = "info-box">
               <span> {props.name} </span>
               <ul id = "hover-box">
-                <p>name</p>
-                <li>'more info'</li>
-                <li>more info2</li>
+                <p>{props.title}</p>
+                <li>URL: {props.bitly}</li>
+                <li><a href = {props.source}>Source</a></li>
                </ul>
             </div>
          </Card>
