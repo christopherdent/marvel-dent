@@ -14,7 +14,7 @@ function Tile(props) {
   return (
          <>
           <Card id="air-tiles">          
-             <img src =  "" />
+             <img src =  {props.image} />
               <div id = "info-box">
               <span> {props.name} </span>
               <ul id = "hover-box">
