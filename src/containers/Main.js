@@ -5,7 +5,7 @@ import Tile from '../components/Tile'
 import Heading from '../components/Heading'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Filter from '../components/Filter';
-
+import SearchBar from '../components/Search';
 
 class Main extends React.Component {
 
@@ -13,12 +13,23 @@ class Main extends React.Component {
     super();    
     this.state = {
       comics: [],
-      filter : 'squirell'
+      filter : null
     
       
   }
 } 
 
+   
+
+
+
+   handleClick = (e) => {
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get('s');
+ 
+    this.setState( {filter: query} )
+      
+   }
 
     configObj = {
       headers : { 
@@ -27,18 +38,14 @@ class Main extends React.Component {
        }
     }
   
- 
-  
+   
     fetchComics = (query = this.state.filter) => {
 
       const publicKey = '8ba20045db37b24d33e34f26c4be8257'
       const hash = '4c2e71d472bde5cbb7bc4a17eac68621'        
       const url = `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}&limit=100`
-
-
-    fetch(url, this.configObj)
-        
-
+      fetch(url, this.configObj)
+    
       .then(res => res.json())
       .then(({data}) => {
         console.log(data.results)
@@ -61,11 +68,10 @@ class Main extends React.Component {
     
 
   
-  //<img src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg">//
-//comic.creators.items.forEach{creator => creator.name}
+  
   render(){   
       
-  
+ 
  
       const filterList = this.state.comics.map(comic => {  
           
@@ -81,11 +87,7 @@ class Main extends React.Component {
             image = { comic.thumbnail.path + "." + comic.thumbnail.extension }
             creators = { comic.creators.items[0] ? comic.creators.items[0].name + " et al." : null }
             moreinfo = { comic.urls[0].url}
-            
-             // bitly = {item.bitly_url}
-             // rating = {item.rating}
-             // title = {item.title}
-             // source = {item.source_post_url}
+    
           
             />
          </Col>         
@@ -104,9 +106,12 @@ class Main extends React.Component {
     <>    
         <Container>
         <Heading />
-        <Filter 
+        <SearchBar 
+        handleClick = {this.handleClick}
+         />
+        {/* <Filter 
         handleCheckbox = {this.handleCheckbox}
-        />
+        /> */}
         <Row>
           {/* {console.log(this.state)} */}
          {filterList}
