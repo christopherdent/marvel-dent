@@ -13,9 +13,9 @@ function Heading() {
   
 <>
 
-<h1>Animal Gifs</h1>
+<h1>Comic Collection</h1>
 <br/>
-<p>Filter by Animal</p>
+<p>Filter?</p>
 </>
        
   );

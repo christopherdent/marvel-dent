@@ -12,43 +12,41 @@ class Main extends React.Component {
   constructor() {
     super();    
     this.state = {
-      gifs: [],
+      comics: [],
       filter : 'squirell'
     
       
   }
 } 
 
+
+    configObj = {
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
   
  
-  // fetchComics = (query = "squirell") => {
+  
     fetchComics = (query = this.state.filter) => {
-    fetch(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=DEvt17BerwqE1YuHcxBOt4EWH1cutiP4&rating=g`)
+
+      const publicKey = '8ba20045db37b24d33e34f26c4be8257'
+      const hash = '4c2e71d472bde5cbb7bc4a17eac68621'        
+      const url = `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}&limit=100`
+
+
+    fetch(url, this.configObj)
         
 
       .then(res => res.json())
       .then(({data}) => {
-        console.log(data)
-        this.setState({ gifs : data })
+        console.log(data.results)
+        
+        this.setState({ comics : data.results })
       })
   }
- 
-  // fetchComics(volume_id=1) {
-//     fetch(`${this.API_URL}/volumes/${volume_id}/?api_key=${this.API_KEY}&format=json&field_list=issues,description,name`)
-//         .then(response => {
-//             return response.json().then(json => {
-//                 return response.ok ? json : Promise.reject(json);
-//             });
-//         })
-//         .then((data) => {
-//            console.log(data)
-//         })
-//         .catch((error) => {
-//             this.setState({
-//                loading: false
-//             });
-//         });
-// }
+
 
 
     componentDidMount(){
@@ -63,49 +61,30 @@ class Main extends React.Component {
     
 
   
-  
+  //<img src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg">//
+
   render(){   
       
-    // const filterList = this.state.gifs.map(gif, index => {
-
-    //   return 
-    
-    //       // if (airline.alliance === this.state.filter || this.state.filter === "none")             
-    //       return (            
-    //         <Col sm={6} md={4} lg={3}>
-    //         <Tile 
-    //           key = {index}
-    //           url = {gif.url}
-    //           // name = {airline.name}
-    //           // alliance = {airline.alliance}
-    //           // phone = {airline.phone}
-    //           // site = {airline.site}
-    //         />
-    //      </Col>         
-        // );
-
-
-
-      // });
+  
  
-      const filterList = this.state.gifs.map(item => {
-        console.log(item.url)
-
-        // if (gif.alliance === this.state.filter || this.state.filter === "none")  
-                  return (            
-            <Col sm={6} md={4} lg={4}>
-            <Tile 
-              key = {item.id}
-              id = {item.id}
-              image = {item.images.original.url}
-              bitly = {item.bitly_url}
-              rating = {item.rating}
-              title = {item.title}
-              source = {item.source_post_url}
-              // name = {airline.name}
-              // alliance = {airline.alliance}
-              // phone = {airline.phone}
-              // site = {airline.site}
+      const filterList = this.state.comics.map(comic => {  
+          
+    
+        // if (gif.alliance === this.state.filter || this.state.filter === "none") 
+        
+        if (comic.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available')
+        return (  
+          <Col sm={6} md={4} lg={4}>
+           <Tile 
+            key = {comic.id}      
+            title = {comic.title}       
+            image = { comic.thumbnail.path + "." + comic.thumbnail.extension }
+            
+             // bitly = {item.bitly_url}
+             // rating = {item.rating}
+             // title = {item.title}
+             // source = {item.source_post_url}
+          
             />
          </Col>         
         );
