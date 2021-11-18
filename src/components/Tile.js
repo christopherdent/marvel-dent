@@ -16,11 +16,12 @@ function Tile(props) {
           <Card id="air-tiles">          
              <img src =  {props.image} />
               <div id = "info-box">
-              {/* <span> {props.title} </span> */}
+              <span> {props.title} </span>
               <ul id = "hover-box">
-                <p>{props.title}</p>
-                <li>URL: {props.bitly}</li>
-                <li><a href = {props.source}>Source</a></li>
+                {/* <p>{props.title}</p> */}
+                <li>{props.creators}</li>
+                <li><a href = {props.moreinfo} target="_blank" rel="noopener noreferrer">More Info</a></li>
+               
                </ul>
             </div>
          </Card>

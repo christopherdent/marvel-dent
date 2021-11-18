@@ -62,7 +62,7 @@ class Main extends React.Component {
 
   
   //<img src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg">//
-
+//comic.creators.items.forEach{creator => creator.name}
   render(){   
       
   
@@ -79,6 +79,8 @@ class Main extends React.Component {
             key = {comic.id}      
             title = {comic.title}       
             image = { comic.thumbnail.path + "." + comic.thumbnail.extension }
+            creators = { comic.creators.items[0] ? comic.creators.items[0].name + " et al." : null }
+            moreinfo = { comic.urls[0].url}
             
              // bitly = {item.bitly_url}
              // rating = {item.rating}
