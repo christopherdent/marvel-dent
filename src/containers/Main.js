@@ -23,13 +23,18 @@ class Main extends React.Component {
 
 
 
-   handleClick = (e) => {
-    const { search } = window.location;
-    const query = new URLSearchParams(search).get('s');
- 
-    this.setState( {filter: query} )
-      
-   }
+   onChange = (e) => {
+         
+this.setState({
+  filter: e.target.value
+  })
+ }
+
+ onClick = () => {
+     
+   this.fetchComics(`&title=${this.state.filter}`)
+
+ }
 
     configObj = {
       headers : { 
@@ -39,11 +44,13 @@ class Main extends React.Component {
     }
   
    
-    fetchComics = (query = this.state.filter) => {
+    fetchComics = (query) => {
 
       const publicKey = '8ba20045db37b24d33e34f26c4be8257'
       const hash = '4c2e71d472bde5cbb7bc4a17eac68621'        
-      const url = `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}&limit=100`
+      const url = `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}&limit=100` + query;
+
+        
       fetch(url, this.configObj)
     
       .then(res => res.json())
@@ -76,7 +83,7 @@ class Main extends React.Component {
       const filterList = this.state.comics.map(comic => {  
           
     
-        // if (gif.alliance === this.state.filter || this.state.filter === "none") 
+        
         
         if (comic.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available')
         return (  
@@ -105,10 +112,20 @@ class Main extends React.Component {
    
     <>    
         <Container>
-        <Heading />
+        <input
+            type="text"
+            id="header-search"
+            placeholder="Search comics"
+            name="s" 
+            onChange={this.onChange}
+        />
+        <button onClick={this.onClick}> Search </button>
+
+       
+        {/* <Heading />
         <SearchBar 
         handleClick = {this.handleClick}
-         />
+         /> */}
         {/* <Filter 
         handleCheckbox = {this.handleCheckbox}
         /> */}
