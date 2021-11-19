@@ -116,7 +116,7 @@ this.setState({
           <SearchBar
           onChange = {this.onChange}
           onClick = {this.onClick}  
-
+          term = {this.state.filter}
           /> 
        
 
