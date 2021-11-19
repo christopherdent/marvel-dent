@@ -32,7 +32,7 @@ this.setState({
 
  onClick = () => {
      
-   this.fetchComics(`&title=${this.state.filter}`)
+   this.fetchComics(`&titleStartsWith=${this.state.filter}`)
 
  }
 
@@ -112,25 +112,16 @@ this.setState({
    
     <>    
         <Container>
-        <input
-            type="text"
-            id="header-search"
-            placeholder="Search comics"
-            name="s" 
-            onChange={this.onChange}
-        />
-        <button onClick={this.onClick}> Search </button>
 
+          <SearchBar
+          onChange = {this.onChange}
+          onClick = {this.onClick}  
+
+          /> 
        
-        {/* <Heading />
-        <SearchBar 
-        handleClick = {this.handleClick}
-         /> */}
-        {/* <Filter 
-        handleCheckbox = {this.handleCheckbox}
-        /> */}
+
         <Row>
-          {/* {console.log(this.state)} */}
+
          {filterList}
         </Row>
       </Container>
