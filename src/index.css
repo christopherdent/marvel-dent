@@ -10,15 +10,23 @@
   border-bottom: 1px solid rgb(221, 221, 221);
   max-width: 100% !important;
   margin: 0 !important;
-  
-  background-color: #FFFFFF;
 
+  background-color: #FFFFFF;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-right: 100px;
 }
+
+
+
+ 
+
 
 
 .container {
   padding-top: 25px; 
   padding-bottom: 150px;
+  
 }
 
 #root > div > div > h1 {
@@ -35,25 +43,9 @@
   font-weight: bold; 
   color: #192024;
 }
-#inputs {
- 
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  font-size: 14px;
-  font-weight: normal;
-  color: #192024; 
-  padding-bottom: 30px; 
-}
  
  
-
-#inputs > div:nth-child(2),
-#inputs > div:nth-child(3),
-#inputs > div:nth-child(4){
-  margin-left: 20px; 
-
-}
+ 
 
  
 #root > div > div > div.row > div{
@@ -197,8 +189,4 @@ button {
 }
  */
 
- #root > div > nav {
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-right: 100px;
-} 
+ 
