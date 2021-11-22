@@ -6,6 +6,10 @@ import Heading from '../components/Heading'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Filter from '../components/Filter';
 import SearchBar from '../components/Search';
+import { trackPromise } from 'react-promise-tracker';
+import Loader from "react-loader-spinner";
+
+
 
 class Main extends React.Component {
 
@@ -50,15 +54,15 @@ this.setState({
       const hash = '4c2e71d472bde5cbb7bc4a17eac68621'        
       const url = `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}&limit=100` + query;
 
-        
+      trackPromise(
+         
       fetch(url, this.configObj)
-    
-      .then(res => res.json())
+          .then(res => res.json())
       .then(({data}) => {
-        console.log(data.results)
-        
+        console.log(data.results)        
         this.setState({ comics : data.results })
       })
+    )
   }
 
 
