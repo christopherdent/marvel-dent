@@ -27,18 +27,16 @@ class Main extends React.Component {
 
 
 
-   onChange = (e) => {
-         
-this.setState({
-  filter: e.target.value
-  })
- }
+   onChange = (e) => {         
+      this.setState({
+        filter: e.target.value
+        })
+  }
 
- onClick = () => {
-     
+  onClick = (e) => {
+    e.preventDefault();
    this.fetchComics(`&titleStartsWith=${this.state.filter}`)
-
- }
+   }
 
     configObj = {
       headers : { 

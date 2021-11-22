@@ -173,12 +173,14 @@ button {
   align-self: center;
 }
 
-
- 
+/* Centers logo */
 #root > div:nth-child(2) {
   display: flex;
   justify-content: center;
 }
+
+
+
 /* 
 #mlogo {
   margin-left: 1000px;  
