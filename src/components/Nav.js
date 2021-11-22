@@ -8,7 +8,7 @@ function Nav() {
    
   return (    
       <Navbar>
-        <a href = 'http://www.christopher-dent.com'>
+        <a href = 'http://www.christopher-dent.com' target="_blank" rel="noopener noreferrer">
         <img 
         src = "https://cjdportfolio.s3.amazonaws.com/android-chrome-512x512.png"
         height = '40px'
@@ -17,7 +17,7 @@ function Nav() {
         />
         </a> 
 
-        <a href = 'http://www.marvel.com'>
+        <a href = 'http://www.marvel.com' target="_blank" rel="noopener noreferrer">
         <img 
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png"
         id = "mlogo"
@@ -25,7 +25,7 @@ function Nav() {
         height='100px'
          />
         </a> 
-        <a href = 'http://www.christopher-dent.com'>
+        <a href = 'http://www.christopher-dent.com' target="_blank" rel="noopener noreferrer">
         <img 
         src = "https://cjdportfolio.s3.amazonaws.com/android-chrome-512x512.png"
         height = '40px'
