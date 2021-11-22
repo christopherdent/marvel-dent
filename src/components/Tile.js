@@ -21,7 +21,7 @@ function Tile(props) {
                 {/* <p>{props.title}</p> */}
                 <li>{props.creators}</li>
                 <li><a href = {props.moreinfo} target="_blank" rel="noopener noreferrer">More Info</a></li>
-               
+                <li><a href = { ` http://www.google.com/search?tbm=shop&q=${props.title} ` } target="_blank" rel="noopener noreferrer">Check Prices / Buy</a></li>
                </ul>
             </div>
          </Card>
