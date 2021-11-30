@@ -6,7 +6,9 @@ import { Navbar } from 'react-bootstrap';
 
 function Nav() {
    
-  return (    
+  return (  
+    <>
+    <br />  
       <Navbar>
         <a href = 'http://www.christopher-dent.com' target="_blank" rel="noopener noreferrer">
         <img 
@@ -36,6 +38,7 @@ function Nav() {
         {' '}  
 
       </Navbar>
+      </>
   );
 }
 
