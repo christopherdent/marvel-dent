@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-
+// import React, { useState } from "react";
+import React from "react";
 
 function SearchBar(props) {
-const [term, setTerm] = useState("")
+
+// const [term, setTerm] = useState("")
+
   return (
     <form>
-      <div class = 'searchArea' >
+      <div className = 'searchArea' >
         <input
             type="text"
             id="header-search"
