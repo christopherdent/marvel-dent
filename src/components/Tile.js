@@ -38,10 +38,15 @@ function Tile(props) {
         return brokenString 
       }
 
+
+      //below harmonizes title lengths using the function above 
       let titleString = breakString(props.title, 20)
-
-
-  return (
+ 
+      //below lets # be included with search query
+      let world = props.title; 
+      let searchURI = 'https://www.google.com/search?tbm=shop&q=' + encodeURIComponent(world);
+  
+      return (
  
 
          <>
@@ -54,8 +59,10 @@ function Tile(props) {
               <ul id = "hover-box">
           
                 <li>{props.creators}</li>
-                <li><a href = {props.moreinfo} target="_blank" rel="noopener noreferrer">More Info</a></li>
-                <li><a href = { ` http://www.google.com/search?tbm=shop&q=${props.title} ` } target="_blank" rel="noopener noreferrer">Check Prices / Buy</a></li>
+                <li><a href = {props.moreinfo} target="_blank" rel="noopener noreferrer">• More Info</a></li>
+                <li><a href = { searchURI } target="_blank" rel="noopener noreferrer">• Check Prices / Buy</a></li>
+              
+              
                </ul>
             </div>
          </Card>
