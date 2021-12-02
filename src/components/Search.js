@@ -1,9 +1,9 @@
-// import React, { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
+ 
 
 function SearchBar(props) {
 
-// const [term, setTerm] = useState("")
+const [term, setTerm] = useState("")
 
   return (
     <form>

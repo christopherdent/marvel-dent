@@ -137,7 +137,7 @@
  
  }
 
- #air-tiles:hover #hover-box {  
+ #air-tiles:hover #hover-box:not(:nth-child(1)) {  
   display: flex;
   flex-direction: column;
   list-style-type: none; /* remove bullets */
@@ -148,6 +148,7 @@
     
 }
 
+ 
  
 #hover-box > ul {
   min-width: 0; 
@@ -177,9 +178,14 @@ button {
 #root > div:nth-child(2) {
   display: flex;
   justify-content: center;
+ 
 }
 
+#root > div > nav > a:nth-child(2) {
+  text-decoration: none !important; 
+  color: red;
 
+}
 
 /* 
 #mlogo {

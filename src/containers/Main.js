@@ -53,21 +53,18 @@ class Main extends React.Component {
       const url = `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}&limit=100` + query;
 
       trackPromise(
-         
-      fetch(url, this.configObj)
-          .then(res => res.json())
-      .then(({data}) => {
-        console.log(data.results)        
-        this.setState({ comics : data.results })
-      })
-    )
-  }
-
-
+       fetch(url, this.configObj)
+         .then(res => res.json())
+         .then(({data}) => {
+           console.log(data.results)        
+           this.setState({ comics : data.results })
+          })
+        )
+      }
 
     componentDidMount(){
       this.fetchComics()
-       
+  
     }
 
     handleCheckbox = e => {
@@ -82,11 +79,7 @@ class Main extends React.Component {
       
  
  
-      const filterList = this.state.comics.map(comic => {  
-          
-    
-        
-        
+      const filterList = this.state.comics.map(comic => {          
         if (comic.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') {
         return (  
           <Col sm={6} md={4} lg={4}>
@@ -114,14 +107,10 @@ class Main extends React.Component {
          
            />
         </Col>    
-        );
-
-        }
-
-  
-        }
-        
-      )
+        )
+       }
+      }
+     )
   
 
     

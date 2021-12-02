@@ -37,12 +37,9 @@ function Tile(props) {
         ))
         return brokenString 
       }
-   
-
-
 
       let titleString = breakString(props.title, 20)
-console.log(titleString)
+
 
   return (
  
