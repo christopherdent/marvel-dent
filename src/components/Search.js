@@ -22,6 +22,7 @@ const [term, setTerm] = useState("")
         type="submit"  
         className="btn btn-danger"
         onClick={props.onClick}
+        onKeyDown={props.onClick}
         > Search Marvel for  { props.term ? props.term : "  ......." }
         </button>
  
