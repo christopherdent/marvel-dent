@@ -43,9 +43,12 @@ function Tile(props) {
       let titleString = breakString(props.title, 20)
  
       //below lets # be included with search query
-      let world = props.title; 
-      let searchURI = 'https://www.google.com/search?tbm=shop&q=' + encodeURIComponent(world);
   
+      let searchTitle = encodeURIComponent(props.title); 
+      let searchURI = 'https://www.google.com/search?tbm=shop&q=' + searchTitle;
+
+
+
       return (
  
 
