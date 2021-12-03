@@ -12,22 +12,26 @@ class App extends React.Component {
  render() {
   return (
     <div>
-      <Nav />  
+ <Nav />  
       <Main />
-    
-    {/*   
-          <Router> 
-          <Routes>         
+     
+
+    {/* <Router>
+        
+   
+ 
+        <Routes>
+         
           <Route exact path='/' component={Main} />
-          </Routes>
-          </Router> 
-          
-    */}
-  
-      </div>
+        
+        </Routes>
+    
+   
+  </Router> */}
+  </div>
 
     );
-  };
-};
+  }
+}
 
 export default App;
