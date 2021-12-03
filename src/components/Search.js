@@ -1,9 +1,9 @@
-import React, { useState } from "react";
- 
+// import React, { useState } from "react";
+import React from "react";
 
 function SearchBar(props) {
 
-const [term, setTerm] = useState("")
+// const [term, setTerm] = useState("")
 
   return (
     <form>
@@ -22,8 +22,7 @@ const [term, setTerm] = useState("")
         type="submit"  
         className="btn btn-danger"
         onClick={props.onClick}
-        onKeyDown={props.onClick}
-        > Search Marvel for  { props.term ? props.term : "  ......." }
+        > Search Marvel for {props.term}
         </button>
  
         <br />  
