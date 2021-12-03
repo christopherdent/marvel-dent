@@ -7,7 +7,8 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
  
 import SearchBar from '../components/Search';
 import { trackPromise } from 'react-promise-tracker';
-
+import { usePromiseTracker } from "react-promise-tracker";
+import Loader from "react-loader-spinner";
 
 
 
@@ -24,10 +25,24 @@ class Main extends React.Component {
 } 
 
    
+configObj = {
+  headers : { 
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+   }
+}
 
-  loader = document.getElementById("loader");
+ 
+  
 
-   onChange = (e) => {         
+
+componentDidMount(){
+  this.fetchComics()
+    
+}
+
+   onChange = (e) => {    
+       
       this.setState({
         filter: e.target.value
         })
@@ -35,55 +50,55 @@ class Main extends React.Component {
 
   onClick = (e) => {
     e.preventDefault();
+   
+
    this.fetchComics(`&titleStartsWith=${this.state.filter}`)
+
+  
    }
 
-    configObj = {
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    }
   
    
     fetchComics = (query) => {
-
+      
+        
       const publicKey = '8ba20045db37b24d33e34f26c4be8257'
       const hash = '4c2e71d472bde5cbb7bc4a17eac68621'        
       const url = `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}&limit=100` + query;
+      // const list = document.getElementById('listComics')
+      // list.setAttribute('display', "hidden");
+  
       
       trackPromise(
-        
        fetch(url, this.configObj)
+       
          .then(res => res.json())
          .then(({data}) => {
            console.log(data.results)        
            this.setState({ comics : data.results })
+          //  list.removeAttribute('display')
            
           }
         )
        )
       }
 
-    componentDidMount(){
-      this.fetchComics()
-  
-    }
+   
 
-    handleCheckbox = e => {
-      if (e.target.value === "All") this.setState({ filter: "none" });
-      else this.setState({ filter: e.target.value });
-    };
+    // handleCheckbox = e => {
+    //   if (e.target.value === "All") this.setState({ filter: "none" });
+    //   else this.setState({ filter: e.target.value });
+    // };
     
 
-  
+   
   
   render(){   
       
  
- 
+      
       const filterList = this.state.comics.map(comic => {          
-         
+        
         return (  
           <Col sm={6} md={4} lg={4}>
            <Tile 
@@ -93,12 +108,13 @@ class Main extends React.Component {
             creators = { comic.creators.items[0] ? comic.creators.items[0].name + " et al." : null }
             moreinfo = { comic.urls[0].url}          
             />
-         </Col>         
+         </Col>    
+              
         );
     
       }
      )
-  
+    
 
     
   return ( 
@@ -113,9 +129,10 @@ class Main extends React.Component {
           /> 
        
 
-        <Row>
+        <Row id='listComics'>
        
-         {filterList}
+         { filterList }
+
         </Row>
       </Container>
     </>

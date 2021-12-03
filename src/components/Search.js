@@ -14,11 +14,13 @@ const [term, setTerm] = useState("")
             placeholder="Enter title"
             name="s" 
             onChange=  {props.onChange} 
+             
         />
         
         <br />  
 
         <button
+        name='s'
         type="submit"  
         className="btn btn-danger"
         onClick={props.onClick}

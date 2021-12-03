@@ -31,6 +31,7 @@ const LoadingIndicator = props => {
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    
     <LoadingIndicator/>
 
   </React.StrictMode>,
