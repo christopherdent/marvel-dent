@@ -31,7 +31,7 @@ class Main extends React.Component {
 
   onClick = (e) => {
     e.preventDefault();
-   this.ssearchComics(`&titleStartsWith=${this.state.filter}`)
+   this.searchComics(`&titleStartsWith=${this.state.filter}`)
    }
 
     configObj = {
