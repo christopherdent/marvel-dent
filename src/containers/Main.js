@@ -23,11 +23,7 @@ class Main extends React.Component {
   }
 } 
 
-   
-
-
-
-   onChange = (e) => {         
+      onChange = (e) => {         
       this.setState({
         filter: e.target.value
         })
