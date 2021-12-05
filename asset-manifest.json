@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/marvel-dent/static/css/main.397c37d0.chunk.css",
+    "main.css": "/marvel-dent/static/css/main.f2963239.chunk.css",
     "main.js": "/marvel-dent/static/js/main.d60c160f.chunk.js",
     "main.js.map": "/marvel-dent/static/js/main.d60c160f.chunk.js.map",
     "runtime-main.js": "/marvel-dent/static/js/runtime-main.f05b8f02.js",
@@ -12,14 +12,14 @@
     "static/js/3.57fadf42.chunk.js.map": "/marvel-dent/static/js/3.57fadf42.chunk.js.map",
     "index.html": "/marvel-dent/index.html",
     "static/css/2.383c0125.chunk.css.map": "/marvel-dent/static/css/2.383c0125.chunk.css.map",
-    "static/css/main.397c37d0.chunk.css.map": "/marvel-dent/static/css/main.397c37d0.chunk.css.map",
+    "static/css/main.f2963239.chunk.css.map": "/marvel-dent/static/css/main.f2963239.chunk.css.map",
     "static/js/2.83412d2e.chunk.js.LICENSE.txt": "/marvel-dent/static/js/2.83412d2e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f05b8f02.js",
     "static/css/2.383c0125.chunk.css",
     "static/js/2.83412d2e.chunk.js",
-    "static/css/main.397c37d0.chunk.css",
+    "static/css/main.f2963239.chunk.css",
     "static/js/main.d60c160f.chunk.js"
   ]
 }
