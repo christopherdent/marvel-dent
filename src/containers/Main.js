@@ -26,7 +26,9 @@ class Main extends React.Component {
       onChange = (e) => {         
       this.setState({
         filter: e.target.value
+
         })
+        this.searchComics(`&titleStartsWith=${this.state.filter}`)
   }
 
   onClick = (e) => {

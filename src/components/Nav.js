@@ -7,12 +7,13 @@ import { Navbar } from 'react-bootstrap';
 function Nav() {
    
   return (    
-      <Navbar>
+      <Navbar className='headers'>
+
         <a href = 'http://www.christopher-dent.com' target="_blank" rel="noopener noreferrer">
         <img 
-        src = "https://cjdportfolio.s3.amazonaws.com/cjd-marvel.png"
+        src = "https://cjdportfolio.s3.amazonaws.com/cjd-marvel-fill.png"
         height = '80px'
-        
+        className = 'cjdLogo'
         id = "cjdlogo"
         />
         </a> 
@@ -27,7 +28,8 @@ function Nav() {
         </a> 
         <a href = 'http://www.christopher-dent.com' target="_blank" rel="noopener noreferrer">
         <img 
-        src = "https://cjdportfolio.s3.amazonaws.com/cjd-marvel.png"
+        src = "https://cjdportfolio.s3.amazonaws.com/cjd-marvel-fill.png"
+        className = 'cjdLogo'
         height = '80px'
         id = "cjdlogo2"
         />

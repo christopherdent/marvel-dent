@@ -191,4 +191,11 @@ button {
 }
  */
 
+ #root > div > nav{
+   background-color: blue;
+
+ }
+
+ .cjdLogo{
  
+ }
