@@ -10,8 +10,8 @@ function Nav() {
       <Navbar>
         <a href = 'http://www.christopher-dent.com' target="_blank" rel="noopener noreferrer">
         <img 
-        src = "https://cjdportfolio.s3.amazonaws.com/android-chrome-512x512.png"
-        height = '40px'
+        src = "https://cjdportfolio.s3.amazonaws.com/cjd-marvel.png"
+        height = '80px'
         
         id = "cjdlogo"
         />
@@ -27,8 +27,8 @@ function Nav() {
         </a> 
         <a href = 'http://www.christopher-dent.com' target="_blank" rel="noopener noreferrer">
         <img 
-        src = "https://cjdportfolio.s3.amazonaws.com/android-chrome-512x512.png"
-        height = '40px'
+        src = "https://cjdportfolio.s3.amazonaws.com/cjd-marvel.png"
+        height = '80px'
         id = "cjdlogo2"
         />
         </a> 

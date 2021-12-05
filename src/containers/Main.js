@@ -31,7 +31,7 @@ class Main extends React.Component {
 
   onClick = (e) => {
     e.preventDefault();
-   this.fetchComics(`&titleStartsWith=${this.state.filter}`)
+   this.ssearchComics(`&titleStartsWith=${this.state.filter}`)
    }
 
     configObj = {
@@ -42,11 +42,11 @@ class Main extends React.Component {
     }
   
    
-    fetchComics = (query) => {
+    fetchComics = () => {
 
       const publicKey = '8ba20045db37b24d33e34f26c4be8257'
       const hash = '4c2e71d472bde5cbb7bc4a17eac68621'        
-      const url = `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}&limit=100` + query;
+      const url = `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}&limit=100`;
 
       trackPromise(
          
@@ -61,17 +61,34 @@ class Main extends React.Component {
 
 
 
-    componentDidMount(){
-      this.fetchComics()
+  searchComics = (query) => {
+
+    const publicKey = '8ba20045db37b24d33e34f26c4be8257'
+    const hash = '4c2e71d472bde5cbb7bc4a17eac68621'        
+    const url = `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}&limit=100` + query;
+
+    trackPromise(
        
+    fetch(url, this.configObj)
+        .then(res => res.json())
+    .then(({data}) => {
+      console.log(data.results)        
+      this.setState({ comics : data.results })
+    })
+  )
+}
+
+
+
+    componentDidMount(){
+      this.fetchComics()    
     }
 
-    handleCheckbox = e => {
-      if (e.target.value === "All") this.setState({ filter: "none" });
-      else this.setState({ filter: e.target.value });
-    };
+    // handleCheckbox = e => {
+    //   if (e.target.value === "All") this.setState({ filter: "none" });
+    //   else this.setState({ filter: e.target.value });
+    // };
     
-
   
   
   render(){   
