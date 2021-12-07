@@ -42,26 +42,22 @@ function Tile(props) {
 
 
       let titleString = breakString(props.title, 20)
-console.log(titleString)
-
-  return (
  
 
+  return (
          <>
-
-
-          <Card id="air-tiles">          
-             <img src =  {props.image} />
-              <div id = "info-box">
-              <span> {titleString} </span>
-              <ul id = "hover-box">
-          
-                <li>{props.creators}</li>
-                <li><a href = {props.moreinfo} target="_blank" rel="noopener noreferrer">★ More Info</a></li>
-                <li><a href = { ` http://www.google.com/search?tbm=shop&q=${encodeURIComponent(props.title)} ` } target="_blank" rel="noopener noreferrer">★ Check Prices / Buy</a></li>
-               </ul>
-            </div>
-         </Card>
+            <Card className="card comic-tiles">          
+               <img src =  {props.image} />
+                
+               <div className = "info-box">
+                <span> {titleString} </span>
+                <ul className = "hover-box">
+                 <li>{props.creators}</li>
+                 <li><a href = {props.moreinfo} target="_blank" rel="noopener noreferrer">★ More Info</a></li>
+                 <li><a href = { ` http://www.google.com/search?tbm=shop&q=${encodeURIComponent(props.title)} ` } target="_blank" rel="noopener noreferrer">★ Check Prices / Buy</a></li>
+                </ul>
+               </div>
+            </Card>
       </>
   );
 }

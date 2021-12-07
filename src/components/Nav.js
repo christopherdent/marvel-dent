@@ -26,6 +26,7 @@ function Nav() {
         height='100px'
          />
         </a> 
+          
         <a href = 'http://www.christopher-dent.com' target="_blank" rel="noopener noreferrer">
         <img 
         src = "https://cjdportfolio.s3.amazonaws.com/cjd-marvel-fill.png"
@@ -34,10 +35,14 @@ function Nav() {
         id = "cjdlogo2"
         />
         </a> 
-
+ 
         {' '}  
-
+ 
+      
       </Navbar>
+      
+ 
+ 
   );
 }
 

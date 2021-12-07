@@ -22,27 +22,32 @@ class Main extends React.Component {
       
   }
 } 
+configObj = {
+  headers : { 
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+   }
+}
 
-      onChange = (e) => {         
-      this.setState({
-        filter: e.target.value
 
-        })
-        this.searchComics(`&titleStartsWith=${this.state.filter}`)
+
+  onChange = (e) => {         
+     this.setState({
+      filter: e.target.value
+      })
+      // this.searchComics(`&titleStartsWith=${this.state.filter}`)
   }
 
   onClick = (e) => {
     e.preventDefault();
+    // this.setState({
+    //   filter: e.target.value
+    //   })
+     
    this.searchComics(`&titleStartsWith=${this.state.filter}`)
    }
 
-    configObj = {
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    }
-  
+ 
    
     fetchComics = () => {
 
@@ -86,23 +91,19 @@ class Main extends React.Component {
       this.fetchComics()    
     }
 
-    // handleCheckbox = e => {
-    //   if (e.target.value === "All") this.setState({ filter: "none" });
-    //   else this.setState({ filter: e.target.value });
-    // };
-    
+  componentDidUpdate() {
+    console.log(document.getElementsByClassName('card'))
+    let cards = document.getElementsByClassName('card')
+    cards.length === 0 ? console.log('nothing here') : console.log('youve got comics')      
+  }
+  
   
   
   render(){   
-      
- 
- 
-      const filterList = this.state.comics.map(comic => {  
-          
-    
-        
-        
-        if (comic.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') {
+       
+      const filterList = 
+       this.state.comics.map(comic => {  
+       if (comic.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') {
         return (  
           <Col sm={6} md={4} lg={4}>
            <Tile 
@@ -111,9 +112,7 @@ class Main extends React.Component {
             image = { comic.thumbnail.path + "." + comic.thumbnail.extension }
             creators = { comic.creators.items[0] ? comic.creators.items[0].name + " et al." : null }
             moreinfo = { comic.urls[0].url}
-    
-          
-            />
+          />
          </Col>         
         );
         } else {
@@ -138,7 +137,8 @@ class Main extends React.Component {
         
       )
   
-
+      // const emptyList = () => {<p>There's nothing here...</p>};
+      
     
   return ( 
    
@@ -154,7 +154,7 @@ class Main extends React.Component {
 
         <Row>
 
-         {filterList}
+         { filterList }
         </Row>
       </Container>
     </>

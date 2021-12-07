@@ -22,7 +22,7 @@ function SearchBar(props) {
         type="submit"  
         className="btn btn-danger"
         onClick={props.onClick}
-        > Search Marvel for {props.term}
+         > Search Marvel for { props.term === null ? "..." : props.term }
         </button>
  
         <br />  
