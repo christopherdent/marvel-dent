@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from 'react'
 import Tile from '../components/Tile'
-import Heading from '../components/Heading'
+
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import Filter from '../components/Filter';
+
 import SearchBar from '../components/Search';
 import { trackPromise } from 'react-promise-tracker';
 import Loader from "react-loader-spinner";
@@ -29,41 +29,41 @@ configObj = {
    }
 }
 
+  refresh = () => {
+    let head = document.getElementById('main-heading')
+    head.click();
+  }
 
 
   onChange = (e) => {         
      this.setState({
       filter: e.target.value
       })
-      // this.searchComics(`&titleStartsWith=${this.state.filter}`)
+      this.searchComics(`&titleStartsWith=${this.state.filter}`)
   }
 
   onClick = (e) => {
     e.preventDefault();
-    // this.setState({
-    //   filter: e.target.value
-    //   })
-     
+        
    this.searchComics(`&titleStartsWith=${this.state.filter}`)
    }
 
  
    
     fetchComics = () => {
-
+      
       const publicKey = '8ba20045db37b24d33e34f26c4be8257'
       const hash = '4c2e71d472bde5cbb7bc4a17eac68621'        
       const url = `https://gateway.marvel.com/v1/public/comics?ts=1&apikey=${publicKey}&hash=${hash}&limit=100`;
-
+   
       trackPromise(
-         
       fetch(url, this.configObj)
           .then(res => res.json())
       .then(({data}) => {
         console.log(data.results)        
         this.setState({ comics : data.results })
       })
-    )
+      )
   }
 
 
@@ -81,6 +81,7 @@ configObj = {
     .then(({data}) => {
       console.log(data.results)        
       this.setState({ comics : data.results })
+      
     })
   )
 }
@@ -88,14 +89,16 @@ configObj = {
 
 
     componentDidMount(){
-      this.fetchComics()    
+      
+      this.fetchComics()   
+ 
     }
 
-  componentDidUpdate() {
-    console.log(document.getElementsByClassName('card'))
-    let cards = document.getElementsByClassName('card')
-    cards.length === 0 ? console.log('nothing here') : console.log('youve got comics')      
-  }
+  // componentDidUpdate() {
+  //   console.log(document.getElementsByClassName('card'))
+  //   let cards = document.getElementsByClassName('card')
+  //   cards.length === 0 ? console.log('nothing here') : console.log('youve got comics')      
+  // }
   
   
   
@@ -143,6 +146,7 @@ configObj = {
   return ( 
    
     <>    
+    
         <Container>
 
           <SearchBar

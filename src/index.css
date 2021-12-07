@@ -172,4 +172,9 @@ button {
  }
 
  
- 
+ /* header css */
+ @import url('https://fonts.googleapis.com/css2?family=Marvel:wght@700&display=swap');
+ #main-heading {
+  font-family: 'Marvel', sans-serif;
+  text-decoration: none!important;
+ }

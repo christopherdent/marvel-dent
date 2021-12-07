@@ -12,10 +12,12 @@ function Heading() {
   return (
   
 <>
-
-<h1>Comic Collection</h1>
-<br/>
-<p>Filter?</p>
+        <h4 className='text-center' >
+        <a id="main-heading" href='/'>
+         comic book collector 
+        </a>
+        </h4>
+        
 </>
        
   );

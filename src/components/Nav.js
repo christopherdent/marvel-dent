@@ -6,7 +6,8 @@ import { Navbar } from 'react-bootstrap';
 
 function Nav() {
    
-  return (    
+  return (  
+    <>  
       <Navbar className='headers'>
 
         <a href = 'http://www.christopher-dent.com' target="_blank" rel="noopener noreferrer">
@@ -42,7 +43,7 @@ function Nav() {
       </Navbar>
       
  
- 
+ </>
   );
 }
 

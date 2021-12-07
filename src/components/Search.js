@@ -11,7 +11,7 @@ function SearchBar(props) {
         <input
             type="text"
             id="header-search"
-            placeholder="Enter title"
+            placeholder="title starts with..."
             name="s" 
             onChange=  {props.onChange} 
         />
