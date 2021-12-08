@@ -41,7 +41,12 @@ const renderTooltip2 = (props) => (
         />
          </OverlayTrigger>
         <br />  
-
+        <button
+        type="submit"  
+        className="btn btn-danger"
+        onClick={props.onClick}
+         > Search Marvel for { props.term === null ? "..." : props.term }
+        </button>
         <OverlayTrigger
         placement="left"
         delay={{ show: 250, hide: 400 }}
@@ -52,12 +57,7 @@ const renderTooltip2 = (props) => (
       </OverlayTrigger>
 
         
-        <button
-        type="submit"  
-        className="btn btn-danger"
-        onClick={props.onClick}
-         > Search Marvel for { props.term === null ? "..." : props.term }
-        </button>
+     
  
         <br />  
         </div>
