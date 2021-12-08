@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/marvel-dent/static/css/main.e6ccd192.chunk.css",
-    "main.js": "/marvel-dent/static/js/main.8f9d4c34.chunk.js",
-    "main.js.map": "/marvel-dent/static/js/main.8f9d4c34.chunk.js.map",
-    "runtime-main.js": "/marvel-dent/static/js/runtime-main.0b152ebe.js",
-    "runtime-main.js.map": "/marvel-dent/static/js/runtime-main.0b152ebe.js.map",
+    "main.js": "/marvel-dent/static/js/main.ac6c5238.chunk.js",
+    "main.js.map": "/marvel-dent/static/js/main.ac6c5238.chunk.js.map",
+    "runtime-main.js": "/marvel-dent/static/js/runtime-main.aa70ea61.js",
+    "runtime-main.js.map": "/marvel-dent/static/js/runtime-main.aa70ea61.js.map",
     "static/css/2.383c0125.chunk.css": "/marvel-dent/static/css/2.383c0125.chunk.css",
-    "static/js/2.006e799e.chunk.js": "/marvel-dent/static/js/2.006e799e.chunk.js",
-    "static/js/2.006e799e.chunk.js.map": "/marvel-dent/static/js/2.006e799e.chunk.js.map",
-    "static/js/3.1782f97a.chunk.js": "/marvel-dent/static/js/3.1782f97a.chunk.js",
-    "static/js/3.1782f97a.chunk.js.map": "/marvel-dent/static/js/3.1782f97a.chunk.js.map",
+    "static/js/2.4f538e54.chunk.js": "/marvel-dent/static/js/2.4f538e54.chunk.js",
+    "static/js/2.4f538e54.chunk.js.map": "/marvel-dent/static/js/2.4f538e54.chunk.js.map",
+    "static/js/3.b3ea3dcd.chunk.js": "/marvel-dent/static/js/3.b3ea3dcd.chunk.js",
+    "static/js/3.b3ea3dcd.chunk.js.map": "/marvel-dent/static/js/3.b3ea3dcd.chunk.js.map",
     "index.html": "/marvel-dent/index.html",
     "static/css/2.383c0125.chunk.css.map": "/marvel-dent/static/css/2.383c0125.chunk.css.map",
     "static/css/main.e6ccd192.chunk.css.map": "/marvel-dent/static/css/main.e6ccd192.chunk.css.map",
-    "static/js/2.006e799e.chunk.js.LICENSE.txt": "/marvel-dent/static/js/2.006e799e.chunk.js.LICENSE.txt"
+    "static/js/2.4f538e54.chunk.js.LICENSE.txt": "/marvel-dent/static/js/2.4f538e54.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.0b152ebe.js",
+    "static/js/runtime-main.aa70ea61.js",
     "static/css/2.383c0125.chunk.css",
-    "static/js/2.006e799e.chunk.js",
+    "static/js/2.4f538e54.chunk.js",
     "static/css/main.e6ccd192.chunk.css",
-    "static/js/main.8f9d4c34.chunk.js"
+    "static/js/main.ac6c5238.chunk.js"
   ]
 }
