@@ -1,13 +1,37 @@
 // import React, { useState } from "react";
 import React from "react";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
+
+
 
 function SearchBar(props) {
 
 // const [term, setTerm] = useState("")
 
+
+const renderTooltip = (props) => (
+  <Tooltip {...props}>
+    Coming soon...
+  </Tooltip>
+);
+
+const renderTooltip2 = (props) => (
+  <Tooltip {...props}>
+    Search titles as you type..
+  </Tooltip>
+);
+
+
   return (
     <form>
       <div className = 'searchArea' >
+
+      <OverlayTrigger
+        placement="left"
+        delay={{ show: 250, hide: 400 }}
+        overlay={renderTooltip2}
+      > 
         <input
             type="text"
             id="header-search"
@@ -15,9 +39,19 @@ function SearchBar(props) {
             name="s" 
             onChange=  {props.onChange} 
         />
-        
+         </OverlayTrigger>
         <br />  
 
+        <OverlayTrigger
+        placement="left"
+        delay={{ show: 250, hide: 400 }}
+        overlay={renderTooltip}
+      > 
+      <p id='advancedSearch'>Advanced Search</p>
+
+      </OverlayTrigger>
+
+        
         <button
         type="submit"  
         className="btn btn-danger"
