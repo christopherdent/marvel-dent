@@ -1,5 +1,11 @@
 import React from 'react' 
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
  
 
 //core containers
@@ -22,12 +28,13 @@ class App extends React.Component {
       <Nav />  
       <Heading />
       <div className='wrapper'>
-        <Router>        
+        <BrowserRouter>        
           <Routes>
-          <Route exact path='/marvel-dent' component={Main} />
-          <Route exact path='/' component={Main} />
+          <Route exact path="/" element={<Main />} />
+            
+            <Route exact path="marvel-dent/" element={<Main />} />
           </Routes>
-        </Router>
+        </BrowserRouter>
         </div>
       </div>
 
