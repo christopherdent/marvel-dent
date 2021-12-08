@@ -163,6 +163,7 @@ button {
   font-family: 'Marvel', sans-serif;
   color: red;
   opacity: 60%;
+  justify-content: flex-end;
 }
 
 

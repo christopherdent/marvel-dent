@@ -13,7 +13,7 @@ function Heading() {
   
 <>
         <h4 className='text-center' >
-        <a id="main-heading" href='/'>
+        <a href='/marvel-dent' id="main-heading" >
          comic book collector 
         </a>
         </h4>
