@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/marvel-dent/static/css/main.e6ccd192.chunk.css",
-    "main.js": "/marvel-dent/static/js/main.9aa0dac1.chunk.js",
-    "main.js.map": "/marvel-dent/static/js/main.9aa0dac1.chunk.js.map",
-    "runtime-main.js": "/marvel-dent/static/js/runtime-main.aa70ea61.js",
-    "runtime-main.js.map": "/marvel-dent/static/js/runtime-main.aa70ea61.js.map",
+    "main.css": "/marvel-dent/static/css/main.46c36518.chunk.css",
+    "main.js": "/marvel-dent/static/js/main.82b080fa.chunk.js",
+    "main.js.map": "/marvel-dent/static/js/main.82b080fa.chunk.js.map",
+    "runtime-main.js": "/marvel-dent/static/js/runtime-main.8094eba6.js",
+    "runtime-main.js.map": "/marvel-dent/static/js/runtime-main.8094eba6.js.map",
     "static/css/2.383c0125.chunk.css": "/marvel-dent/static/css/2.383c0125.chunk.css",
-    "static/js/2.4f538e54.chunk.js": "/marvel-dent/static/js/2.4f538e54.chunk.js",
-    "static/js/2.4f538e54.chunk.js.map": "/marvel-dent/static/js/2.4f538e54.chunk.js.map",
-    "static/js/3.b3ea3dcd.chunk.js": "/marvel-dent/static/js/3.b3ea3dcd.chunk.js",
-    "static/js/3.b3ea3dcd.chunk.js.map": "/marvel-dent/static/js/3.b3ea3dcd.chunk.js.map",
+    "static/js/2.5c4a4ece.chunk.js": "/marvel-dent/static/js/2.5c4a4ece.chunk.js",
+    "static/js/2.5c4a4ece.chunk.js.map": "/marvel-dent/static/js/2.5c4a4ece.chunk.js.map",
+    "static/js/3.a0f38c02.chunk.js": "/marvel-dent/static/js/3.a0f38c02.chunk.js",
+    "static/js/3.a0f38c02.chunk.js.map": "/marvel-dent/static/js/3.a0f38c02.chunk.js.map",
     "index.html": "/marvel-dent/index.html",
     "static/css/2.383c0125.chunk.css.map": "/marvel-dent/static/css/2.383c0125.chunk.css.map",
-    "static/css/main.e6ccd192.chunk.css.map": "/marvel-dent/static/css/main.e6ccd192.chunk.css.map",
-    "static/js/2.4f538e54.chunk.js.LICENSE.txt": "/marvel-dent/static/js/2.4f538e54.chunk.js.LICENSE.txt"
+    "static/css/main.46c36518.chunk.css.map": "/marvel-dent/static/css/main.46c36518.chunk.css.map",
+    "static/js/2.5c4a4ece.chunk.js.LICENSE.txt": "/marvel-dent/static/js/2.5c4a4ece.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.aa70ea61.js",
+    "static/js/runtime-main.8094eba6.js",
     "static/css/2.383c0125.chunk.css",
-    "static/js/2.4f538e54.chunk.js",
-    "static/css/main.e6ccd192.chunk.css",
-    "static/js/main.9aa0dac1.chunk.js"
+    "static/js/2.5c4a4ece.chunk.js",
+    "static/css/main.46c36518.chunk.css",
+    "static/js/main.82b080fa.chunk.js"
   ]
 }
