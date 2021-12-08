@@ -40,22 +40,23 @@ const renderTooltip2 = (props) => (
             onChange=  {props.onChange} 
         />
          </OverlayTrigger>
-        <br />  
-        <button
+             <button
         type="submit"  
-        className="btn btn-danger"
+        className="btn btn-danger btn-block"
         onClick={props.onClick}
          > Search Marvel for { props.term === null ? "..." : props.term }
         </button>
+
+<center>
         <OverlayTrigger
-        placement="left"
+        placement="bottom"
         delay={{ show: 250, hide: 400 }}
         overlay={renderTooltip}
       > 
-      <p id='advancedSearch'>Advanced Search</p>
+      <p id='advancedSearch'>Advanced Search?</p>
 
       </OverlayTrigger>
-
+</center>
         
      
  

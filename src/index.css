@@ -153,9 +153,10 @@
 
 }
 
-button {
-  max-width: 50%;
+#root > div > div > div > form > div > button {
+  min-width: 75%;
   align-self: center;
+  margin-top: 5px;
 }
 
 #advancedSearch {
@@ -163,7 +164,7 @@ button {
   font-family: 'Marvel', sans-serif;
   color: red;
   opacity: 0.6;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 
