@@ -16,12 +16,6 @@ import Heading from './components/Heading';
 
 class App extends React.Component {
 
-  componentDidMount(){
-    
-  }
-
-
-
  render() {
   return (
     <div>
@@ -30,8 +24,7 @@ class App extends React.Component {
       <div className='wrapper'>
         <BrowserRouter>        
           <Routes>
-          <Route exact path="/" element={<Main />} />
-            
+          <Route exact path="/" element={<Main />} />            
             <Route exact path="marvel-dent/" element={<Main />} />
           </Routes>
         </BrowserRouter>

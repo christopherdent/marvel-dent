@@ -140,8 +140,7 @@ configObj = {
         
       )
   
-      // const emptyList = () => {<p>There's nothing here...</p>};
-      
+       
     
   return ( 
    
