@@ -4,9 +4,10 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 import {Link} from "react-router-dom";
 import AdvancedSearchForm from "./AdvancedSearchForm";
-
+import FocusTrap from 'focus-trap-react';
 
 function SearchBar(props) {
 
@@ -18,17 +19,13 @@ function SearchBar(props) {
   const handleShow = () => setShow(true);
 ///
 
-// const renderTooltip = (props) => (
-//   <Tooltip {...props}>
-//     Coming soon...
-//   </Tooltip>
-// );
-
-const renderTooltip= (props) => (
+const renderTooltip = (props) => (
   <Tooltip {...props}>
-    Search titles as you type..
+    Coming soon...
   </Tooltip>
 );
+
+ 
 
 
   return (
@@ -58,26 +55,29 @@ const renderTooltip= (props) => (
         <br />  
         </div>
         </form>
+      
+         
         <center>
           <p id='advancedSearch' onClick={handleShow}> Advanced Search? </p>
+          </center>
+       
+
           <Modal show={show} onHide={handleClose} animation={false}>
             <Modal.Header closeButton />
               <Modal.Body>            
-                <AdvancedSearchForm />
+                <AdvancedSearchForm
+                
+                onSubmit = {props.onAdvancedSubmit} 
+                onClick = {handleClose}
+                />
               </Modal.Body>
               <Modal.Footer>
               
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              
-              <Button variant="danger" onClick={handleClose} id="advancedSearchButton" disabled>
-                Search Marvel 
-              </Button>
-            
+          
             </Modal.Footer>
           </Modal>
-          </center>
+         
+          
   
       </>
     );

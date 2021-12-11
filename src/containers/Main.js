@@ -48,7 +48,9 @@ configObj = {
    this.searchComics(`&titleStartsWith=${this.state.filter}`)
    }
 
- 
+   onAdvancedSubmit = (e) => {
+     console.log("Advanced Search Engaged!")
+   }
    
     fetchComics = () => {
       
@@ -152,6 +154,7 @@ configObj = {
           onChange = {this.onChange}
           onClick = {this.onClick}  
           term = {this.state.filter}
+          onAdvancedSubmit = {this.onAdvancedSubmit}
           /> 
        
 
