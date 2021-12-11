@@ -11,18 +11,20 @@ import AdvancedSearchForm from "./AdvancedSearchForm";
 function SearchBar(props) {
 
 // const [term, setTerm] = useState("")
-  const [show, setShow] = useState(false);
 
+///all for modal 
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+///
 
-const renderTooltip = (props) => (
-  <Tooltip {...props}>
-    Coming soon...
-  </Tooltip>
-);
+// const renderTooltip = (props) => (
+//   <Tooltip {...props}>
+//     Coming soon...
+//   </Tooltip>
+// );
 
-const renderTooltip2 = (props) => (
+const renderTooltip= (props) => (
   <Tooltip {...props}>
     Search titles as you type..
   </Tooltip>
@@ -30,13 +32,14 @@ const renderTooltip2 = (props) => (
 
 
   return (
+  <>
     <form>
       <div className = 'searchArea' >
 
       <OverlayTrigger
         placement="left"
         delay={{ show: 250, hide: 400 }}
-        overlay={renderTooltip2}
+        overlay={renderTooltip}
       > 
         <input
             type="text"
@@ -52,50 +55,32 @@ const renderTooltip2 = (props) => (
         onClick={props.onClick}
          > Search Marvel for { props.term === null ? "..." : props.term }
         </button>
-
-<center>
-  
-
-
-      <p id='advancedSearch' onClick={handleShow}> Advanced Search? </p>
-
-
-    
-
-
-      <Modal show={show} onHide={handleClose} animation={false}>
-        <Modal.Header closeButton>
-          <Modal.Title>Advanced Search</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          
-          <AdvancedSearchForm />
-        
-        
-        </Modal.Body>
-
-        
-
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="danger" onClick={handleClose}>
-            Search Marvel 
-          </Button>
-        </Modal.Footer>
-      </Modal>
-
-
-
-</center>
-        
-     
- 
         <br />  
         </div>
         </form>
- );
+        <center>
+          <p id='advancedSearch' onClick={handleShow}> Advanced Search? </p>
+          <Modal show={show} onHide={handleClose} animation={false}>
+            <Modal.Header closeButton />
+              <Modal.Body>            
+                <AdvancedSearchForm />
+              </Modal.Body>
+              <Modal.Footer>
+              
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+              
+              <Button variant="danger" onClick={handleClose} id="advancedSearchButton" disabled>
+                Search Marvel 
+              </Button>
+            
+            </Modal.Footer>
+          </Modal>
+          </center>
+  
+      </>
+    );
   };
 
 export default SearchBar;
