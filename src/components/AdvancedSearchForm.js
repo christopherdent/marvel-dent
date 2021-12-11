@@ -7,22 +7,27 @@ import Button from 'react-bootstrap/Button'
 
 function AdvancedSearchForm(props) {
    
+  function handleClose() {
+    props.setShow(false);
+  } 
   
+
+
   return (
   
     <>
     <center>
+
     <p>Advanced Search Coming Soon!</p>
     
-
-             <Button variant="secondary" onClick={props.handleClose}>
+    <Button variant="secondary" onClick={handleClose}>
                 Close
               </Button>
               
-              <Button variant="danger" onClick={props.handleClose} id="advancedSearchButton" disabled>
+              <Button variant="danger" onClick={handleClose} id="advancedSearchButton" disabled>
                 Search Marvel 
               </Button>
-            
+         
             
             </center>
     </>

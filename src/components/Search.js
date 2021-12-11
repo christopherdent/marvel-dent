@@ -15,13 +15,21 @@ function SearchBar(props) {
 
 ///all for modal 
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+  function handleShow() {
+    setShow(true);
+  }
+
+  function handleClose() {
+    setShow(false);
+  } 
+  
+  
 ///
 
 const renderTooltip = (props) => (
   <Tooltip {...props}>
-    Coming soon...
+    "Search titles as you type..."
   </Tooltip>
 );
 
@@ -52,7 +60,7 @@ const renderTooltip = (props) => (
         onClick={props.onClick}
          > Search Marvel for { props.term === null ? "..." : props.term }
         </button>
-        <br />  
+       
         </div>
         </form>
       
@@ -68,11 +76,18 @@ const renderTooltip = (props) => (
                 <AdvancedSearchForm
                 
                 onSubmit = {props.onAdvancedSubmit} 
-                onClick = {handleClose}
+                setShow = {setShow}
                 />
               </Modal.Body>
               <Modal.Footer>
+              {/* <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
               
+              <Button variant="danger" onClick={handleClose} id="advancedSearchButton" disabled>
+                Search Marvel 
+              </Button> */}
+            
           
             </Modal.Footer>
           </Modal>
