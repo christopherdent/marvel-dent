@@ -65,7 +65,7 @@ function AdvancedSearchForm(props) {
                 Close
               </Button>
               
-              <Button variant="danger" onClick={handleClose} id="advancedSearchButton">
+              <Button variant="danger" onClick={handleClose} id="advancedSearchButton" disabled>
                 Search Marvel 
               </Button>
          </Form>
