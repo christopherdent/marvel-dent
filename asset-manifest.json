@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/marvel-dent/static/css/main.e1cadb92.chunk.css",
-    "main.js": "/marvel-dent/static/js/main.67710b9f.chunk.js",
-    "main.js.map": "/marvel-dent/static/js/main.67710b9f.chunk.js.map",
+    "main.js": "/marvel-dent/static/js/main.0b70659a.chunk.js",
+    "main.js.map": "/marvel-dent/static/js/main.0b70659a.chunk.js.map",
     "runtime-main.js": "/marvel-dent/static/js/runtime-main.386e4332.js",
     "runtime-main.js.map": "/marvel-dent/static/js/runtime-main.386e4332.js.map",
     "static/css/2.383c0125.chunk.css": "/marvel-dent/static/css/2.383c0125.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.383c0125.chunk.css",
     "static/js/2.209a23d5.chunk.js",
     "static/css/main.e1cadb92.chunk.css",
-    "static/js/main.67710b9f.chunk.js"
+    "static/js/main.0b70659a.chunk.js"
   ]
 }
