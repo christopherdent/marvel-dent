@@ -15,8 +15,8 @@ function Nav() {
         <img 
         src = "https://cjdportfolio.s3.amazonaws.com/android-chrome-512x512.png"
         className = 'sideLogos'
-        height = '40px'
-        id = "cjdlogo2"
+        height = '30px'
+        id = "cjdlogo1"
         />
         </a> 
 
@@ -26,7 +26,7 @@ function Nav() {
         src = "https://cjdportfolio.s3.amazonaws.com/PngItem_95196.png"
         height = '80px'
         className = 'sideLogos'
-        id = "cjdlogo"
+    
 
         />
         </a> 
@@ -46,7 +46,7 @@ function Nav() {
         src = "https://cjdportfolio.s3.amazonaws.com/PngItem_95196.png"
         
         height = '80px'
-        id = "cjdlogo2"
+      
         className = 'sideLogos'
         />
         </a> 
@@ -55,7 +55,7 @@ function Nav() {
         <img 
         src = "https://cjdportfolio.s3.amazonaws.com/android-chrome-512x512.png"
         className = 'sideLogos'
-        height = '40px'
+        height = '30px'
         id = "cjdlogo2"
         />
         </a> 

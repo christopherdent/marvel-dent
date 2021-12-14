@@ -29,7 +29,7 @@ function SearchBar(props) {
 
 const renderTooltip = (props) => (
   <Tooltip {...props}>
-    "Search titles as you type..."
+    Search titles as you type...
   </Tooltip>
 );
 
