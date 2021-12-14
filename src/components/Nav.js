@@ -19,7 +19,7 @@ function Nav() {
         />
         </a> 
 
-        <a href = 'http://www.marvel.com' target="_blank" rel="noopener noreferrer">
+        <a href = 'https://developer.marvel.com/' target="_blank" rel="noopener noreferrer">
         <img 
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png"
         id = "mlogo"

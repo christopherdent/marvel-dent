@@ -42,7 +42,7 @@ configObj = {
       this.searchComics(`&titleStartsWith=${this.state.filter}`)
   }
 
-  onClick = (e) => {
+  onSearchClick = (e) => {
     e.preventDefault();
         
    this.searchComics(`&titleStartsWith=${this.state.filter}`)
@@ -152,7 +152,7 @@ configObj = {
 
           <SearchBar
           onChange = {this.onChange}
-          onClick = {this.onClick}  
+          onSearchClick = {this.onSearchClick}  
           term = {this.state.filter}
           onAdvancedSubmit = {this.onAdvancedSubmit}
           /> 

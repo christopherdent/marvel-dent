@@ -54,17 +54,18 @@ const renderTooltip = (props) => (
             onChange=  {props.onChange} 
         />
          </OverlayTrigger>
-             <button
+        
+        <button
         type="submit"  
         className="btn btn-danger btn-block"
-        onClick={props.onClick}
+        onClick={props.onSearchClick}
          > Search Marvel for { props.term === null ? "..." : props.term }
         </button>
        
         </div>
         </form>
       
-         
+   {/* below here is advanced search and should eventually be moved into a separate component       */}
         <center>
           <p id='advancedSearch' onClick={handleShow}> Advanced Search? </p>
           </center>
@@ -77,6 +78,7 @@ const renderTooltip = (props) => (
                 
                 onSubmit = {props.onAdvancedSubmit} 
                 setShow = {setShow}
+                term = {props.term}
                 />
               </Modal.Body>
               <Modal.Footer>
