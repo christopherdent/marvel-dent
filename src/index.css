@@ -204,3 +204,22 @@
  body > div.modal > div > div > div.modal-footer {
    justify-content: center;
  }
+
+
+
+
+
+
+
+/* media queries */
+@media only screen and (max-width: 768px) {
+  .sideLogos {
+    display: none;
+   } 
+  }
+
+
+
+
+
+
