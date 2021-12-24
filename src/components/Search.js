@@ -1,13 +1,16 @@
 // import React, { useState } from "react";
 import React, { useState }  from "react";
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Tooltip from 'react-bootstrap/Tooltip'
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-import Container from 'react-bootstrap/Container'
+// import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+// import Tooltip from 'react-bootstrap/Tooltip'
+// import Modal from 'react-bootstrap/Modal'
+// import Button from 'react-bootstrap/Button'
+// import Container from 'react-bootstrap/Container'
+
+import { Form, Button, Modal, Tooltip, OverlayTrigger } from 'react-bootstrap';
+
 import {Link} from "react-router-dom";
 import AdvancedSearchForm from "./AdvancedSearchForm";
-import FocusTrap from 'focus-trap-react';
+ 
 
 function SearchBar(props) {
 
@@ -38,7 +41,7 @@ const renderTooltip = (props) => (
 
   return (
   <>
-    <form>
+    <Form>
       <div className = 'searchArea' >
 
       <OverlayTrigger
@@ -48,22 +51,25 @@ const renderTooltip = (props) => (
       > 
         <input
             type="text"
+            
             id="header-search"
             placeholder="title starts with..."
             name="s" 
             onChange=  {props.onChange} 
+             
         />
          </OverlayTrigger>
         
-        <button
+        <Button
         type="submit"  
         className="btn btn-danger btn-block"
         onClick={props.onSearchClick}
+        
          > Search Marvel for { props.term === null ? "..." : props.term }
-        </button>
+        </Button>
        
         </div>
-        </form>
+        </Form>
       
    {/* below here is advanced search and should eventually be moved into a separate component       */}
         <center>

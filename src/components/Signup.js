@@ -5,7 +5,7 @@ import React from "react";
  
 import { Navbar, Container } from 'react-bootstrap';
 
-function Login() {
+function Signup() {
    
 
  
@@ -19,4 +19,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;
