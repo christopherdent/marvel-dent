@@ -65,13 +65,19 @@ handleLogout = () => {
       <Nav />  
       <Heading />
       <div className='wrapper'>
-        <BrowserRouter>        
-          <Routes>
-          <Route exact path="/" element={<Main />} />            
-            <Route exact path="marvel-dent/" element={<Main />} />
 
-            <Route exact path='/login' component={Login}/>
-            <Route exact path='/signup' component={Signup}/>
+
+        <BrowserRouter> 
+
+          <Routes>
+          <Route exact path="/" element={<Main />} />   
+
+            <Route exact path="/marvel-dent" element={<Main />} />
+
+            <Route exact path='/login' element={<Login />}/>
+
+            <Route exact path='/signup' element={<Signup />}/>
+
           </Routes>
         </BrowserRouter>
         </div>
