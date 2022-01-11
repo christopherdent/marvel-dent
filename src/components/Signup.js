@@ -10,7 +10,6 @@ class Signup extends React.Component{
     super(props);
     this.state = { 
       username: '',
-      email: '',
       password: '',
       password_confirmation: '',
       errors: ''
@@ -27,15 +26,58 @@ class Signup extends React.Component{
   handleSubmit = (event) => {
       event.preventDefault();
 
-      
-    
-    };
+      const {username, password, password_confirmation} = this.state 
 
 
+        let user = {
+          username: username,
+          password: password,
+          password_confirmation: password_confirmation
+        }
+
+
+
+        fetch('http://localhost:3000/users', {
+            credentials: "include",
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({user})
+          })
+        .then(resp => {
+            
+          if (resp.formData.status === 'created') {
+            this.props.handleLogin(response.data)
+            this.redirect()
+          } else {
+            this.setState({
+              errors: resp.data.errors
+            })
+          }
+        })
+        .catch(error => console.log('api errors:', error))
+      };
+
+      redirect = () => {
+        this.props.history.push('/')
+      }
+
+      handleErrors = () => {
+        return (
+          <div>
+            <ul>
+            {this.state.errors.map(error => {
+            return <li key={error}>{error}</li>
+              })}
+            </ul>
+          </div>
+        )
+      };
 
 
 render() {
-  const {username, email, password, password_confirmation} = this.state
+  const {username, password, password_confirmation} = this.state
   
   return (
     <>
@@ -49,13 +91,7 @@ render() {
             value={username}
             onChange={this.handleChange}
           />
-          <input
-            placeholder="email"
-            type="text"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          />
+   
           <input 
             placeholder="password"
             type="password"
