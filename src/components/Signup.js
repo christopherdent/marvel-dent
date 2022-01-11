@@ -37,28 +37,45 @@ class Signup extends React.Component{
 
 
 
-        fetch('http://localhost:3000/users', {
-            credentials: "include",
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({user})
-          })
-        .then(resp => {
+      //   fetch('http://localhost:3000/users', {
+      //       credentials: "include",
+      //       method: "POST",
+      //       headers: {
+      //         "Content-Type": "application/json"
+      //       },
+      //       body: JSON.stringify({user})
+      //     })
+      //   .then(resp => {
             
-          if (resp.formData.status === 'created') {
-            this.props.handleLogin(response.data)
-            this.redirect()
-          } else {
-            this.setState({
-              errors: resp.data.errors
-            })
-          }
-        })
-        .catch(error => console.log('api errors:', error))
-      };
+      //     if (resp.formData.status === 'created') {
+      //       this.props.handleLogin(response.data)
+      //       this.redirect()
+      //     } else {
+      //       debugger 
+      //       this.setState({
+      //         errors: resp.data.errors
+      //       })
+      //     }
+      //   })
+      //   .catch(error => console.log('api errors:', error))
+      // };
+      fetch('http://localhost:3000/users', {
+        credentials: "include",
+        method: 'POST', // or 'PUT'
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({user}),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
 
+    }
       redirect = () => {
         this.props.history.push('/')
       }
