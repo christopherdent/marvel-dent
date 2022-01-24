@@ -2,15 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { usePromiseTracker } from "react-promise-tracker";
 import Loader from "react-loader-spinner";
 
+
+//Redux
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import comicsReducer from './reducers/comicsReducer'
+import { combineReducers } from "redux";
+ 
 
 //Vanilla Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+const rootReducer = combineReducers({
+  comics: comicsReducer   
+})
+
+const composeEnhancers =  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+ 
+let store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+
+
+///consider moving to App.js 
 const LoadingIndicator = props => {
   const { promiseInProgress } = usePromiseTracker();
 
@@ -30,15 +47,10 @@ const LoadingIndicator = props => {
  
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store = { store }>
     <App />
-    <LoadingIndicator/>
-
-  </React.StrictMode>,
+    <LoadingIndicator/>  
+    </Provider>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

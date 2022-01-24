@@ -1,9 +1,11 @@
 /*eslint-disable*/
 
 import React from "react";
-
+import {Link} from 'react-router-dom'
  
-import { Navbar, Container } from 'react-bootstrap';
+import { Navbar, Container, Button } from 'react-bootstrap';
+import Login from './Login'
+
 
 class Signup extends React.Component{
   constructor(props) {
@@ -70,13 +72,15 @@ class Signup extends React.Component{
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
+        this.redirect()
       })
       .catch((error) => {
         console.error('Error:', error);
       });
-
+      
     }
       redirect = () => {
+            
         this.props.history.push('/')
       }
 
@@ -92,6 +96,7 @@ class Signup extends React.Component{
         )
       };
 
+  
 
 render() {
   const {username, password, password_confirmation} = this.state
@@ -127,7 +132,9 @@ render() {
           <button placeholder="submit" type="submit">
             Sign Up
           </button>
-      
+          <div>
+            or <Link to='/login'>login</Link>
+          </div>
         </form>
 
 

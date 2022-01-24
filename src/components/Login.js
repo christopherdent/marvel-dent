@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import { Navbar, Container, Button } from 'react-bootstrap';
 
 
-
-class Login extends React.Component{
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -12,6 +12,10 @@ class Login extends React.Component{
       errors: ''
      };
   }
+
+   
+
+
 handleChange = (event) => {
     const {name, value} = event.target
     this.setState({
@@ -22,17 +26,26 @@ handleChange = (event) => {
 
 handleSubmit = (event) => {
     event.preventDefault();
-    const {username, email, password} = this.state;
+    const {username, password} = this.state;
     let user = {
       username: username,
       password: password     
     }
 
-    fetch('http://localhost:3000/login', {user}, {withCredentials: true})
+    fetch('http://localhost:3000/login', {
+      credentials: "include",
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({user}),
+    })
+    .then(response => response.json())  
       .then(resp => {
-        if (resp.data.logged_in) {
-          this.props.handleLogin(resp.data)
-          this.redirect()
+        // debugger 
+        if (resp.logged_in) {
+          this.props.handleLogin(resp)
+          // this.redirect()
         } else {
           this.setState({errors: resp.data.errors})
         }
@@ -40,9 +53,10 @@ handleSubmit = (event) => {
       .catch(err => console.log('api error:', err))
     };
 
-      redirect = () => {
-        this.props.history.push('/')
-      }
+      // redirect = () => {
+      //     debugger
+      //   this.props.history.push('/')
+      // }
 
       handleErrors = () => {
           return (
@@ -84,8 +98,15 @@ render() {
           <div>
             or <Link to='/signup'>sign up</Link>
           </div>
-          
+         
          </form>
+
+         <h1>  { this.props.logged_in ? `${this.state.username} is now logged in.` : "Logged out."} </h1>
+
+         <Button onClick = {this.props.handleLogout} > Log out? </Button>
+
+        
+
       </div>
     );
   }
