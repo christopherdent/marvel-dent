@@ -17,7 +17,9 @@ import {liveSearchComics} from '../actions/liveSearchComics'
 class Main extends React.Component {
   constructor(props) {
     super(props);
-  
+    this.state = {
+      term: ""
+    }
   };
  
 
@@ -25,12 +27,21 @@ class Main extends React.Component {
     this.props.fetchComics()     
   }
 
-  onSearchChange = (e) => {      
-    const search = document.querySelector("#header-search")
+  onSearchChange = (e) => {     
+    
+    
+  //   const search = document.querySelector("#header-search")
+
+
+  // //regex for removing whitespace 
     const regex = /^[^-\s][\w\s-]+$/
-    if (search.value.match(regex)) {
-        this.props.liveSearchComics(`&titleStartsWith=${search.value}`)
-    }
+    const search = document.querySelector("#header-search")
+    this.setState({term: search.value.match(regex)})
+
+
+    // if (search.value.match(regex)) {
+    //     this.props.liveSearchComics(`&titleStartsWith=${search.value}`)
+    // }
 
   }
 
@@ -57,9 +68,10 @@ class Main extends React.Component {
           <Container>
 
               <SearchBar
-              onChange = {this.onSearchChange}
+              
               onSearchClick = {this.onSearchClick}  
               onSearchChange = {this.onSearchChange}
+              term = {this.state.term}
               // onAdvancedSubmit = {this.onAdvancedSubmit}
               /> 
           

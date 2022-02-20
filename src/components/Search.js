@@ -64,7 +64,7 @@ const searchTerm = document.querySelector("#header-search")
         className="btn btn-danger btn-block"
         onClick={props.onSearchClick}
         
-         > Search Marvel
+         > Search Marvel for {props.term}
         </Button>
        
         </div>
