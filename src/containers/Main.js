@@ -11,27 +11,37 @@ import Loader from "react-loader-spinner";
 import {connect} from 'react-redux'
 import {fetchComics} from '../actions/fetchComics'
 import {searchComics} from '../actions/searchComics'
-
+import {liveSearchComics} from '../actions/liveSearchComics'
 
 
 class Main extends React.Component {
-
+  constructor(props) {
+    super(props);
+  
+  };
  
 
   componentDidMount(){        
     this.props.fetchComics()     
   }
 
-  onChange = (e) => {         
-     this.setState({
-      filter: e.target.value
-      })
-      this.props.searchComics(`&titleStartsWith=${this.state.filter}`)
+  onSearchChange = (e) => {  
+
+    
+    const search = document.querySelector("#header-search")
+    if(search.value !== ''){
+        this.props.liveSearchComics(`&titleStartsWith=${search.value}`)
+    }
+
   }
 
   onSearchClick = (e) => {
-    e.preventDefault();        
-   this.props.searchComics(`&titleStartsWith=${this.state.filter}`)
+    e.preventDefault();
+              
+      const search = document.querySelector("#header-search")
+       
+  //  this.props.searchComics(`&titleStartsWith=${this.state.filter}`)
+      this.props.searchComics(`&titleStartsWith=${search.value}`)
    }
 
    onAdvancedSubmit = (e) => {
@@ -50,8 +60,8 @@ class Main extends React.Component {
           <Container>
 
               <SearchBar
-              // onChange = {this.onChange}
-              // onSearchClick = {this.onSearchClick}  
+              onChange = {this.onSearchChange}
+              onSearchClick = {this.onSearchClick}  
               // term = {this.state.filter}
               // onAdvancedSubmit = {this.onAdvancedSubmit}
               /> 
@@ -73,10 +83,10 @@ class Main extends React.Component {
     function mapStateToProps(state) {
       return {
         comics: state.comics
- 
+         
       }
     }
 
-export default connect(mapStateToProps, {fetchComics, searchComics})(Main)
+export default connect(mapStateToProps, {fetchComics, searchComics, liveSearchComics})(Main)
 
  

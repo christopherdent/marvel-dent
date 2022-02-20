@@ -21,7 +21,7 @@ function Nav() {
         </a> 
 
 
-        <a href = 'https://developer.marvel.com/' target="_blank" rel="noopener noreferrer">
+        {/* <a href = 'https://developer.marvel.com/' target="_blank" rel="noopener noreferrer">
         <img 
         src = "https://cjdportfolio.s3.amazonaws.com/PngItem_95196.png"
         height = '80px'
@@ -29,7 +29,7 @@ function Nav() {
     
 
         />
-        </a> 
+        </a>  */}
 
         <a href = 'https://www.marvel.com/' target="_blank" rel="noopener noreferrer">
         <img 
@@ -41,7 +41,7 @@ function Nav() {
          />
         </a> 
           
-        <a href = 'https://developer.marvel.com/' target="_blank" rel="noopener noreferrer">
+        {/* <a href = 'https://developer.marvel.com/' target="_blank" rel="noopener noreferrer">
         <img 
         src = "https://cjdportfolio.s3.amazonaws.com/PngItem_95196.png"
         
@@ -49,7 +49,7 @@ function Nav() {
       
         className = 'sideLogos'
         />
-        </a> 
+        </a>  */}
 
         <a href = 'http://www.christopher-dent.com' target="_blank" rel="noopener noreferrer">
         <img 

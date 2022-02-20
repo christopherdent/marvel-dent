@@ -1,7 +1,7 @@
 
 
 
-  export function searchComics(query){
+  export function liveSearchComics(query){
 
     const publicKey = '8ba20045db37b24d33e34f26c4be8257'
     const hash = '4c2e71d472bde5cbb7bc4a17eac68621'        
@@ -19,7 +19,7 @@
         .then(resp => resp.json())
         .then( 
           data => dispatch({
-          type: 'SEARCH_COMICS',
+          type: 'LIVE_SEARCH_COMICS',
           payload: data
          }))        
       }

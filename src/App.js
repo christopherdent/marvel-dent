@@ -34,44 +34,7 @@ class App extends React.Component {
    
 
  
-       
 
-  ///just checks logged in status 
-//   loginStatus = () => {
-//     fetch('http://localhost:3000/logged_in', {
-//       credentials: "include",
-//       method: 'GET', 
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     })   
-//     .then(res => res.json())
-//     .then(response => {     
-//       if (response.logged_in) {
-//         this.handleLogin(response)
-//       } else { 
-//         this.handleLogout()
-//       }
-//     })
-//     .catch(error => console.log('api errors:', error))
-//   }
-
-//   handleLogin = (data) => {   
-    
-//     this.setState({
-//       isLoggedIn: data.logged_in,      
-//       user: data.user,
-//       errors: ""
-//     })
-//   }
-
-// handleLogout = () => {
-//     this.setState({
-//     isLoggedIn: false,
-//     user: {},
-//     errors: ""
-//     })
-//   }
 
  render() {
   return (
