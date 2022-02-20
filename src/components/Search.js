@@ -37,7 +37,7 @@ const renderTooltip = (props) => (
 );
 
  
-
+const searchTerm = document.querySelector("#header-search")
 
   return (
   <>
@@ -50,12 +50,11 @@ const renderTooltip = (props) => (
         overlay={renderTooltip}
       > 
         <input
-            type="text"
-            
+            type="text"            
             id="header-search"
             placeholder="title starts with..."
             name="s" 
-            onChange=  {props.onChange} 
+            onChange=  {props.onSearchChange} 
              
         />
          </OverlayTrigger>
@@ -65,7 +64,7 @@ const renderTooltip = (props) => (
         className="btn btn-danger btn-block"
         onClick={props.onSearchClick}
         
-         > Search Marvel for { props.term === null ? "..." : props.term }
+         > Search Marvel
         </Button>
        
         </div>

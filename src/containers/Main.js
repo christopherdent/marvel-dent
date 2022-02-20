@@ -25,23 +25,20 @@ class Main extends React.Component {
     this.props.fetchComics()     
   }
 
-  onSearchChange = (e) => {  
-
-    
+  onSearchChange = (e) => {      
     const search = document.querySelector("#header-search")
-    if(search.value !== ''){
+    const regex = /^[^-\s][\w\s-]+$/
+    if (search.value.match(regex)) {
         this.props.liveSearchComics(`&titleStartsWith=${search.value}`)
     }
 
   }
 
   onSearchClick = (e) => {
-    e.preventDefault();
-              
-      const search = document.querySelector("#header-search")
-       
-  //  this.props.searchComics(`&titleStartsWith=${this.state.filter}`)
+    e.preventDefault();              
+      const search = document.querySelector("#header-search")      
       this.props.searchComics(`&titleStartsWith=${search.value}`)
+      
    }
 
    onAdvancedSubmit = (e) => {
@@ -62,7 +59,7 @@ class Main extends React.Component {
               <SearchBar
               onChange = {this.onSearchChange}
               onSearchClick = {this.onSearchClick}  
-              // term = {this.state.filter}
+              onSearchChange = {this.onSearchChange}
               // onAdvancedSubmit = {this.onAdvancedSubmit}
               /> 
           

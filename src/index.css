@@ -152,13 +152,9 @@
  justify-content: center !important;
 
 }
-/* #header-search{
-  width: 50em;
-   
-} */
 
 #root > div > div > div > form > div > button {
-  min-width: 75%;
+  min-width: 25%;
   align-self: center;
   margin-top: 5px;
 }

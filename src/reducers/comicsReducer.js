@@ -26,10 +26,11 @@ export default function comicsReducer(state = initialState, action) {
             }
 
             case 'LIVE_SEARCH_COMICS':
-               
-              console.log('in the function')
+              debugger
+              console.log('fsd')
+    
             
-            if(action.payload.data.results !== []) {
+            if(action.payload.data.results) {
               return { 
                 ...state, 
                 comics: action.payload.data.results,
