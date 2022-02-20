@@ -149,7 +149,8 @@
 .searchArea{
  display: flex;
  flex-direction: column;
- justify-content: center !important;
+ /* justify-content: center !important; */
+ align-items: center 
 
 }
 
@@ -168,7 +169,10 @@
 }
 
 
-
+#header-search {
+  min-width: 50%;
+   
+}
 
 
 /* Navbar CSS*/

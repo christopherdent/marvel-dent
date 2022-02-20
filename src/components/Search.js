@@ -7,14 +7,13 @@ import React, { useState }  from "react";
 // import Container from 'react-bootstrap/Container'
 
 import { Form, Button, Modal, Tooltip, OverlayTrigger } from 'react-bootstrap';
-
-import {Link} from "react-router-dom";
+ 
 import AdvancedSearchForm from "./AdvancedSearchForm";
  
 
 function SearchBar(props) {
 
-// const [term, setTerm] = useState("")
+ 
 
 ///all for modal 
   const [show, setShow] = useState(false);
@@ -30,25 +29,23 @@ function SearchBar(props) {
   
 ///
 
-const renderTooltip = (props) => (
-  <Tooltip {...props}>
-    Search titles as you type...
-  </Tooltip>
-);
-
+// const renderTooltip = (props) => (
+//   <Tooltip {...props}>
+//     Search titles as you type...
+//   </Tooltip>
+// );
  
-const searchTerm = document.querySelector("#header-search")
 
   return (
   <>
     <Form>
       <div className = 'searchArea' >
 
-      <OverlayTrigger
+      {/* <OverlayTrigger
         placement="left"
         delay={{ show: 250, hide: 400 }}
         overlay={renderTooltip}
-      > 
+      >   */}
         <input
             type="text"            
             id="header-search"
@@ -57,7 +54,8 @@ const searchTerm = document.querySelector("#header-search")
             onChange=  {props.onSearchChange} 
              
         />
-         </OverlayTrigger>
+        
+         {/* </OverlayTrigger> */}
         
         <Button
         type="submit"  

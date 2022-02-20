@@ -34,9 +34,9 @@ class Main extends React.Component {
 
 
   // //regex for removing whitespace 
-    const regex = /^[^-\s][\w\s-]+$/
+    // const regex = /^[^-\s][\w\s-]+$/
     const search = document.querySelector("#header-search")
-    this.setState({term: search.value.match(regex)})
+    this.setState({term: search.value})
 
 
     // if (search.value.match(regex)) {
@@ -46,9 +46,10 @@ class Main extends React.Component {
   }
 
   onSearchClick = (e) => {
-    e.preventDefault();              
+    e.preventDefault();    
+      const regex = /^[^-\s][\w\s-]+$/          
       const search = document.querySelector("#header-search")      
-      this.props.searchComics(`&titleStartsWith=${search.value}`)
+      search.value.match(regex) ? this.props.searchComics(`&titleStartsWith=${search.value}`) : ''
       
    }
 

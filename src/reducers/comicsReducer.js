@@ -26,7 +26,7 @@ export default function comicsReducer(state = initialState, action) {
             }
 
             case 'LIVE_SEARCH_COMICS':
-              debugger
+              
               console.log('fsd')
     
             
