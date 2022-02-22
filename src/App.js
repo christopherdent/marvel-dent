@@ -22,11 +22,7 @@ import {searchComics} from './actions/searchComics'
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      isLoggedIn: false,
-      user: {},
-      errors: ""
-     };
+ 
   };
 
 
@@ -58,7 +54,7 @@ class App extends React.Component {
                                                   handleLogin={this.handleLogin} 
                                                   handleLogout={this.handleLogout}
                                                   history = {this.history}
-                                                  logged_in = {this.state.isLoggedIn}
+                                                  
                                                     />
                                                   }  
                                                 />

@@ -1,6 +1,7 @@
 
 
 
+
   export function searchComics(query){
 
     const publicKey = '8ba20045db37b24d33e34f26c4be8257'
@@ -13,16 +14,19 @@
          }
       }
    
-    
+       
     return (dispatch) => {  
+     
         return fetch(url, configObj)
         .then(resp => resp.json())
         .then( 
           data => dispatch({
           type: 'SEARCH_COMICS',
           payload: data
-         }))        
+         }))
+               
       }
+       
     }
   
   
