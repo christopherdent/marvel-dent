@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { usePromiseTracker } from "react-promise-tracker";
-import Loader from "react-loader-spinner";
+
  
 
 //Redux

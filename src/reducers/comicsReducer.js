@@ -39,7 +39,7 @@ export default function comicsReducer(state = initialState, action) {
             } 
              
           
-
+            break 
 
         default: 
         return state; 

@@ -13,7 +13,7 @@ import AdvancedSearchForm from "./AdvancedSearchForm";
 
 function SearchBar(props) {
 
- 
+   
 
 ///all for modal 
   const [show, setShow] = useState(false);
@@ -36,6 +36,8 @@ function SearchBar(props) {
 // );
  
 
+ 
+
   return (
   <>
     <Form>
@@ -50,11 +52,15 @@ function SearchBar(props) {
             type="text"            
             id="header-search"
             placeholder="title starts with..."
-            name="s" 
-            onChange=  {props.onSearchChange} 
+             
+            name="requiredField" 
+            // onChange=  {props.onSearchChange} 
+             
              
         />
-        
+        <br />
+         
+        <br />
          {/* </OverlayTrigger> */}
         
         <Button

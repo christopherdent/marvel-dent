@@ -1,18 +1,13 @@
-
 import React from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import {connect} from 'react-redux'
-import {fetchComics} from '../actions/fetchComics'
-import {searchComics} from '../actions/searchComics'
+import { Col } from 'react-bootstrap';
 import Tile from '../components/Tile'
-
 
 const ComicsList = (props) => {
 
-  // const list = console.log(props.comics.comics.map(comic => comic.title ))
 
-  const list = 
-  
+    
+
+  const list =   
   props.comics.comics.map(comic => { 
     if (comic.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') {
     return (
@@ -37,14 +32,14 @@ const ComicsList = (props) => {
                 moreinfo = { comic.urls[0].url}
                 />
               </Col>   
-      )}
-    }
-  )
-
-
+        )}
+      }
+    )
+    
+ 
     return (
       <>     
-       {list}
+       { list }
       </>
       )
      }
