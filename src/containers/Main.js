@@ -45,6 +45,7 @@ class Main extends React.Component {
 
   onSearchClick = (e) => {
     e.preventDefault();    
+    
       const regex = /^[^-\s][\w\s-]+$/          
       const search = document.querySelector("#header-search")   
       trackPromise(

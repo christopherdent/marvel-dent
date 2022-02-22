@@ -12,6 +12,7 @@
   margin: 0 !important;
 
   background-color: #FFFFFF;
+  opacity: 70%;
   flex-direction: row;
   justify-content: space-evenly;
   margin-right: 100px;
@@ -222,6 +223,9 @@
 
 
 
+ #cjdlogo2 {
+   visibility: hidden;
+ }
 
 
 
