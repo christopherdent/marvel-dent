@@ -23,7 +23,9 @@ class Main extends React.Component {
       term: ""
     }
   };
- 
+
+
+  
 
   componentDidMount(){   
     trackPromise(
@@ -31,11 +33,9 @@ class Main extends React.Component {
     ) 
   }
 
-  onSearchChange = (e) => {     
-  //   const search = document.querySelector("#header-search")
-  // //regex for removing whitespace 
-    // const regex = /^[^-\s][\w\s-]+$/
-    const search = document.querySelector("#header-search")
+  onSearchChange = (term) => {     
+    const search = document.querySelector("#term")
+     
     this.setState({term: search.value})
     // if (search.value.match(regex)) {
     //     this.props.liveSearchComics(`&titleStartsWith=${search.value}`)

@@ -12,7 +12,8 @@ import AdvancedSearchForm from "./AdvancedSearchForm";
  
 const validate = values => {
   const errors = {};
-  if (!values.term || values.term.match(/^\S+$/)) {
+  
+    if (!values.term) {
     errors.term = 'Please enter a search term';
   } 
   return errors;
@@ -33,20 +34,21 @@ function SearchBar(props) {
   return (
     <form onSubmit={formik.handleSubmit}>
        <div className = 'searchArea' >
-      <label htmlFor="term">Search Marvel for...</label>
+      {/* <label htmlFor="term">Search Marvel for...</label> */}
       <input
         id="term"
         name="term"
-        type="text"
-        onChange={formik.handleChange}
+        type="text"        
         value={formik.values.term}
+        onKeyUp={props.onSearchChange}
+        onChange = {formik.handleChange} 
        
       />
 
       { formik.errors.term ? (<div>{formik.errors.term}</div>) : null}
        
         
-      <Button type="submit" className="btn btn-danger btn-block" >Submit</Button>
+      <Button type="submit" className="btn btn-danger btn-block" >Search Marvel for {props.term ? props.term : '.....'}</Button>
 
         <br />
       </div>
