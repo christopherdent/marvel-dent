@@ -13,6 +13,7 @@
     "fetch-jsonp": "^1.2.1",
     "focus-trap": "^6.7.1",
     "focus-trap-react": "^8.8.2",
+    "formik": "^2.2.9",
     "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0",

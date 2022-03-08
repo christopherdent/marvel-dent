@@ -6,107 +6,53 @@ import React, { useState }  from "react";
 // import Button from 'react-bootstrap/Button'
 // import Container from 'react-bootstrap/Container'
 
-import { Form, Button, Modal, Tooltip, OverlayTrigger } from 'react-bootstrap';
- 
+import { Form, Button, Modal, Tooltip, OverlayTrigger } from 'react-bootstrap'; 
+import { useFormik } from 'formik';
 import AdvancedSearchForm from "./AdvancedSearchForm";
  
+const validate = values => {
+  const errors = {};
+  if (!values.term || values.term.match(/^\S+$/)) {
+    errors.term = 'Please enter a search term';
+  } 
+  return errors;
+};
+
 
 function SearchBar(props) {
 
-   
+  const formik = useFormik({
+    initialValues: { term: "" },
+    validate,
+    onSubmit: values => {
+      props.onSearchClick(values.term) 
+    }
+  });
 
-///all for modal 
-  const [show, setShow] = useState(false);
-
-  function handleShow() {
-    setShow(true);
-  }
-
-  function handleClose() {
-    setShow(false);
-  } 
   
-  
-///
-
-// const renderTooltip = (props) => (
-//   <Tooltip {...props}>
-//     Search titles as you type...
-//   </Tooltip>
-// );
- 
-
- 
-
   return (
-  <>
-    <Form>
-      <div className = 'searchArea' >
-
-      {/* <OverlayTrigger
-        placement="left"
-        delay={{ show: 250, hide: 400 }}
-        overlay={renderTooltip}
-      >   */}
-        <input
-            type="text"            
-            id="header-search"
-            placeholder="title starts with..."
-             
-            name="requiredField" 
-            // onChange=  {props.onSearchChange} 
-             
-             
-        />
-        <br />
-         
-        <br />
-         {/* </OverlayTrigger> */}
-        
-        <Button
-        type="submit"  
-        className="btn btn-danger btn-block"
-        onClick={props.onSearchClick}
-        
-         > Search Marvel for {props.term}
-        </Button>
+    <form onSubmit={formik.handleSubmit}>
+       <div className = 'searchArea' >
+      <label htmlFor="term">Search Marvel for...</label>
+      <input
+        id="term"
+        name="term"
+        type="text"
+        onChange={formik.handleChange}
+        value={formik.values.term}
        
-        </div>
-        </Form>
-      
-   {/* below here is advanced search and should eventually be moved into a separate component       */}
-        <center>
-          <p id='advancedSearch' onClick={handleShow}> Advanced Search? </p>
-          </center>
-       
+      />
 
-          <Modal show={show} onHide={handleClose} animation={false}>
-            <Modal.Header closeButton />
-              <Modal.Body>            
-                <AdvancedSearchForm
-                
-                onSubmit = {props.onAdvancedSubmit} 
-                setShow = {setShow}
-                term = {props.term}
-                />
-              </Modal.Body>
-              <Modal.Footer>
-              {/* <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              
-              <Button variant="danger" onClick={handleClose} id="advancedSearchButton" disabled>
-                Search Marvel 
-              </Button> */}
-            
-          
-            </Modal.Footer>
-          </Modal>
-         
-          
-  
-      </>
-    );
+      { formik.errors.term ? (<div>{formik.errors.term}</div>) : null}
+       
+        
+      <Button type="submit" className="btn btn-danger btn-block" >Submit</Button>
+
+        <br />
+      </div>
+    </form>
+  );
+
   };
 
 export default SearchBar;

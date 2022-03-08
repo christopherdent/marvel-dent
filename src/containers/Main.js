@@ -43,21 +43,17 @@ class Main extends React.Component {
 
   }
 
-  onSearchClick = (e) => {
-    e.preventDefault();    
-    
-      const regex = /^[^-\s][\w\s-]+$/          
-      const search = document.querySelector("#header-search")   
-      trackPromise(
-      search.value.match(regex) ? this.props.searchComics(`&titleStartsWith=${search.value}`) : ''
-      )
+  onSearchClick = (term) => {     
+    trackPromise(      
+      this.props.searchComics(`&titleStartsWith=${term}`)
+    )
    }
+
 
    onAdvancedSubmit = (e) => {
      console.log("Advanced Search Engaged!")
    }
-   
-  
+    
    
    render(){              
       return ( 
