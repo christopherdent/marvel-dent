@@ -39,6 +39,7 @@ function SearchBar(props) {
         id="term"
         name="term"
         type="text"        
+        autocomplete="off"
         value={formik.values.term}
         onKeyUp={props.onSearchChange}
         onChange = {formik.handleChange} 
